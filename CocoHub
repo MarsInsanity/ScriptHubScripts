@@ -1,0 +1,705 @@
+local CocoHub = Instance.new("ScreenGui")
+local ButtonFrame = Instance.new("Frame")
+local OpenBG = Instance.new("ImageLabel")
+local OpenButton = Instance.new("TextButton")
+local HubFrame = Instance.new("Frame")
+local TopbarFrame = Instance.new("Frame")
+local CocoHub_2 = Instance.new("TextLabel")
+local Exit = Instance.new("TextButton")
+local Minimize = Instance.new("TextButton")
+local ExecuteFrame = Instance.new("ScrollingFrame")
+local AAA = Instance.new("TextButton")
+local UIGridLayout = Instance.new("UIGridLayout")
+local AAB = Instance.new("TextButton")
+local AAC = Instance.new("TextButton")
+local AAD = Instance.new("TextButton")
+local AAE = Instance.new("TextButton")
+local AAF = Instance.new("TextButton")
+local AAG = Instance.new("TextButton")
+local AAH = Instance.new("TextButton")
+local AAI = Instance.new("TextButton")
+local AAJ = Instance.new("TextButton")
+local AAK = Instance.new("TextButton")
+local AAL = Instance.new("TextButton")
+local AAM = Instance.new("TextButton")
+local AAN = Instance.new("TextButton")
+local AAO = Instance.new("TextButton")
+local AAP = Instance.new("TextButton")
+local AAQ = Instance.new("TextButton")
+local AAR = Instance.new("TextButton")
+local AAS = Instance.new("TextButton")
+local AAT = Instance.new("TextButton")
+local AAU = Instance.new("TextButton")
+local AAV = Instance.new("TextButton")
+local AAW = Instance.new("TextButton")
+local AAX = Instance.new("TextButton")
+local IntroFrame = Instance.new("ImageLabel")
+local IntroLogo = Instance.new("TextLabel")
+
+CocoHub.Name = "CocoHub"
+CocoHub.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+ButtonFrame.Name = "ButtonFrame"
+ButtonFrame.Parent = CocoHub
+ButtonFrame.BackgroundColor3 = Color3.new(1, 1, 1)
+ButtonFrame.BackgroundTransparency = 1
+ButtonFrame.BorderSizePixel = 0
+ButtonFrame.ClipsDescendants = true
+ButtonFrame.Position = UDim2.new(1, -50, 2, -50)
+ButtonFrame.Size = UDim2.new(0, 40, 0, 40)
+
+OpenBG.Name = "OpenBG"
+OpenBG.Parent = ButtonFrame
+OpenBG.Active = true
+OpenBG.BackgroundColor3 = Color3.new(1, 1, 1)
+OpenBG.BackgroundTransparency = 1
+OpenBG.Selectable = true
+OpenBG.Size = UDim2.new(1, 0, 1, 0)
+OpenBG.Image = "rbxassetid://3570695787"
+OpenBG.ImageColor3 = Color3.new(0.137255, 0.137255, 0.137255)
+OpenBG.ScaleType = Enum.ScaleType.Slice
+OpenBG.SliceCenter = Rect.new(100, 100, 100, 100)
+
+OpenButton.Name = "OpenButton"
+OpenButton.Parent = ButtonFrame
+OpenButton.BackgroundColor3 = Color3.new(0.137255, 0.137255, 0.137255)
+OpenButton.BackgroundTransparency = 1
+OpenButton.BorderSizePixel = 0
+OpenButton.Size = UDim2.new(1, 0, 1, 0)
+OpenButton.Font = Enum.Font.GothamBold
+OpenButton.Text = "<"
+OpenButton.TextColor3 = Color3.new(1, 1, 1)
+OpenButton.TextSize = 20
+
+HubFrame.Name = "HubFrame"
+HubFrame.Parent = CocoHub
+HubFrame.AnchorPoint = Vector2.new(0.5, 0.5)
+HubFrame.BackgroundColor3 = Color3.new(0.137255, 0.137255, 0.137255)
+HubFrame.BorderSizePixel = 0
+HubFrame.ClipsDescendants = true
+HubFrame.Position = UDim2.new(0.5, 0, 2, 0)
+HubFrame.Size = UDim2.new(0, 717, 0, 393)
+
+TopbarFrame.Name = "TopbarFrame"
+TopbarFrame.Parent = HubFrame
+TopbarFrame.AnchorPoint = Vector2.new(0.5, 0.5)
+TopbarFrame.BackgroundColor3 = Color3.new(0.262745, 0.262745, 0.262745)
+TopbarFrame.BorderSizePixel = 0
+TopbarFrame.Position = UDim2.new(0.5, 0, 0.0483460575, 0)
+TopbarFrame.Size = UDim2.new(0, 717, 0, 38)
+
+CocoHub_2.Name = "CocoHub"
+CocoHub_2.Parent = TopbarFrame
+CocoHub_2.BackgroundColor3 = Color3.new(1, 1, 1)
+CocoHub_2.BackgroundTransparency = 1
+CocoHub_2.BorderSizePixel = 0
+CocoHub_2.Position = UDim2.new(0.0139470007, 0, 0, 0)
+CocoHub_2.Size = UDim2.new(0.149232909, 0, 1, 0)
+CocoHub_2.Font = Enum.Font.GothamBold
+CocoHub_2.Text = "COCO HUB"
+CocoHub_2.TextColor3 = Color3.new(1, 1, 1)
+CocoHub_2.TextSize = 20
+CocoHub_2.TextXAlignment = Enum.TextXAlignment.Left
+
+Exit.Name = "Exit"
+Exit.Parent = TopbarFrame
+Exit.BackgroundColor3 = Color3.new(1, 1, 1)
+Exit.BackgroundTransparency = 1
+Exit.BorderSizePixel = 0
+Exit.Position = UDim2.new(0.947001398, 0, 0, 0)
+Exit.Size = UDim2.new(0, 38, 1, 0)
+Exit.Font = Enum.Font.GothamBold
+Exit.Text = "X"
+Exit.TextColor3 = Color3.new(1, 1, 1)
+Exit.TextSize = 20
+
+Minimize.Name = "Minimize"
+Minimize.Parent = TopbarFrame
+Minimize.BackgroundColor3 = Color3.new(1, 1, 1)
+Minimize.BackgroundTransparency = 1
+Minimize.BorderSizePixel = 0
+Minimize.Position = UDim2.new(0.894002795, 0, 0, 0)
+Minimize.Size = UDim2.new(0, 38, 1, 0)
+Minimize.Font = Enum.Font.GothamBold
+Minimize.Text = "-"
+Minimize.TextColor3 = Color3.new(1, 1, 1)
+Minimize.TextSize = 20
+
+ExecuteFrame.Name = "ExecuteFrame"
+ExecuteFrame.Parent = HubFrame
+ExecuteFrame.Active = true
+ExecuteFrame.BackgroundColor3 = Color3.new(1, 1, 1)
+ExecuteFrame.BackgroundTransparency = 1
+ExecuteFrame.BorderSizePixel = 0
+ExecuteFrame.Position = UDim2.new(0, 0, 0.127226457, 0)
+ExecuteFrame.Size = UDim2.new(1, 0, 0.872773528, 0)
+ExecuteFrame.CanvasSize = UDim2.new(0, 0, 0.873000026, 0)
+ExecuteFrame.ScrollBarThickness = 5
+
+AAA.Name = "AAA"
+AAA.Parent = ExecuteFrame
+AAA.BackgroundColor3 = Color3.new(0.262745, 0.262745, 0.262745)
+AAA.BorderSizePixel = 0
+AAA.Size = UDim2.new(0, 200, 0, 50)
+AAA.Font = Enum.Font.GothamBold
+AAA.Text = "CCAimbot"
+AAA.TextColor3 = Color3.new(1, 1, 1)
+AAA.TextSize = 20
+AAA.TextWrapped = true
+
+UIGridLayout.Parent = ExecuteFrame
+UIGridLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+UIGridLayout.SortOrder = Enum.SortOrder.LayoutOrder
+UIGridLayout.CellSize = UDim2.new(0, 150, 0, 50)
+
+AAB.Name = "AAB"
+AAB.Parent = ExecuteFrame
+AAB.BackgroundColor3 = Color3.new(0.262745, 0.262745, 0.262745)
+AAB.BorderSizePixel = 0
+AAB.Size = UDim2.new(0, 200, 0, 50)
+AAB.Font = Enum.Font.GothamBold
+AAB.Text = "Zyrex Hub"
+AAB.TextColor3 = Color3.new(1, 1, 1)
+AAB.TextSize = 20
+AAB.TextWrapped = true
+
+AAC.Name = "AAC"
+AAC.Parent = ExecuteFrame
+AAC.BackgroundColor3 = Color3.new(0.262745, 0.262745, 0.262745)
+AAC.BorderSizePixel = 0
+AAC.Size = UDim2.new(0, 200, 0, 50)
+AAC.Font = Enum.Font.GothamBold
+AAC.Text = "Prisonware"
+AAC.TextColor3 = Color3.new(1, 1, 1)
+AAC.TextSize = 20
+AAC.TextWrapped = true
+
+AAD.Name = "AAD"
+AAD.Parent = ExecuteFrame
+AAD.BackgroundColor3 = Color3.new(0.262745, 0.262745, 0.262745)
+AAD.BorderSizePixel = 0
+AAD.Size = UDim2.new(0, 200, 0, 50)
+AAD.Font = Enum.Font.GothamBold
+AAD.Text = "Bloxware"
+AAD.TextColor3 = Color3.new(1, 1, 1)
+AAD.TextSize = 20
+AAD.TextWrapped = true
+
+AAE.Name = "AAE"
+AAE.Parent = ExecuteFrame
+AAE.BackgroundColor3 = Color3.new(0.262745, 0.262745, 0.262745)
+AAE.BorderSizePixel = 0
+AAE.Size = UDim2.new(0, 200, 0, 50)
+AAE.Font = Enum.Font.GothamBold
+AAE.Text = "Dragon Ball Z Autofarm"
+AAE.TextColor3 = Color3.new(1, 1, 1)
+AAE.TextSize = 20
+AAE.TextWrapped = true
+
+AAF.Name = "AAF"
+AAF.Parent = ExecuteFrame
+AAF.BackgroundColor3 = Color3.new(0.262745, 0.262745, 0.262745)
+AAF.BorderSizePixel = 0
+AAF.Size = UDim2.new(0, 200, 0, 50)
+AAF.Font = Enum.Font.GothamBold
+AAF.Text = "Kraken Chat Logger"
+AAF.TextColor3 = Color3.new(1, 1, 1)
+AAF.TextSize = 20
+AAF.TextWrapped = true
+
+AAG.Name = "AAG"
+AAG.Parent = ExecuteFrame
+AAG.BackgroundColor3 = Color3.new(0.262745, 0.262745, 0.262745)
+AAG.BorderSizePixel = 0
+AAG.Size = UDim2.new(0, 200, 0, 50)
+AAG.Font = Enum.Font.GothamBold
+AAG.Text = "Kraken Hub"
+AAG.TextColor3 = Color3.new(1, 1, 1)
+AAG.TextSize = 20
+AAG.TextWrapped = true
+
+AAH.Name = "AAH"
+AAH.Parent = ExecuteFrame
+AAH.BackgroundColor3 = Color3.new(0.262745, 0.262745, 0.262745)
+AAH.BorderSizePixel = 0
+AAH.Size = UDim2.new(0, 200, 0, 50)
+AAH.Font = Enum.Font.GothamBold
+AAH.Text = "Ultimate Hat Script"
+AAH.TextColor3 = Color3.new(1, 1, 1)
+AAH.TextSize = 20
+AAH.TextWrapped = true
+
+AAI.Name = "AAI"
+AAI.Parent = ExecuteFrame
+AAI.BackgroundColor3 = Color3.new(0.262745, 0.262745, 0.262745)
+AAI.BorderSizePixel = 0
+AAI.Size = UDim2.new(0, 200, 0, 50)
+AAI.Font = Enum.Font.GothamBold
+AAI.Text = "Invisible Flinger"
+AAI.TextColor3 = Color3.new(1, 1, 1)
+AAI.TextSize = 20
+AAI.TextWrapped = true
+
+AAJ.Name = "AAJ"
+AAJ.Parent = ExecuteFrame
+AAJ.BackgroundColor3 = Color3.new(0.262745, 0.262745, 0.262745)
+AAJ.BorderSizePixel = 0
+AAJ.Size = UDim2.new(0, 200, 0, 50)
+AAJ.Font = Enum.Font.GothamBold
+AAJ.Text = "Infinite Yield"
+AAJ.TextColor3 = Color3.new(1, 1, 1)
+AAJ.TextSize = 20
+AAJ.TextWrapped = true
+
+AAK.Name = "AAK"
+AAK.Parent = ExecuteFrame
+AAK.BackgroundColor3 = Color3.new(0.262745, 0.262745, 0.262745)
+AAK.BorderSizePixel = 0
+AAK.Size = UDim2.new(0, 200, 0, 50)
+AAK.Font = Enum.Font.GothamBold
+AAK.Text = "Auratus Hub (Press Z)"
+AAK.TextColor3 = Color3.new(1, 1, 1)
+AAK.TextSize = 20
+AAK.TextWrapped = true
+
+AAL.Name = "AAL"
+AAL.Parent = ExecuteFrame
+AAL.BackgroundColor3 = Color3.new(0.262745, 0.262745, 0.262745)
+AAL.BorderSizePixel = 0
+AAL.Size = UDim2.new(0, 200, 0, 50)
+AAL.Font = Enum.Font.GothamBold
+AAL.Text = "JailTabs"
+AAL.TextColor3 = Color3.new(1, 1, 1)
+AAL.TextSize = 20
+AAL.TextWrapped = true
+
+AAM.Name = "AAM"
+AAM.Parent = ExecuteFrame
+AAM.BackgroundColor3 = Color3.new(0.262745, 0.262745, 0.262745)
+AAM.BorderSizePixel = 0
+AAM.Size = UDim2.new(0, 200, 0, 50)
+AAM.Font = Enum.Font.GothamBold
+AAM.Text = "SharkBite"
+AAM.TextColor3 = Color3.new(1, 1, 1)
+AAM.TextSize = 20
+AAM.TextWrapped = true
+
+AAN.Name = "AAN"
+AAN.Parent = ExecuteFrame
+AAN.BackgroundColor3 = Color3.new(0.262745, 0.262745, 0.262745)
+AAN.BorderSizePixel = 0
+AAN.Size = UDim2.new(0, 200, 0, 50)
+AAN.Font = Enum.Font.GothamBold
+AAN.Text = "MadCity"
+AAN.TextColor3 = Color3.new(1, 1, 1)
+AAN.TextSize = 20
+AAN.TextWrapped = true
+
+AAO.Name = "AAO"
+AAO.Parent = ExecuteFrame
+AAO.BackgroundColor3 = Color3.new(0.262745, 0.262745, 0.262745)
+AAO.BorderSizePixel = 0
+AAO.Size = UDim2.new(0, 200, 0, 50)
+AAO.Font = Enum.Font.GothamBold
+AAO.Text = "oofNotoriety"
+AAO.TextColor3 = Color3.new(1, 1, 1)
+AAO.TextSize = 20
+AAO.TextWrapped = true
+
+AAP.Name = "AAP"
+AAP.Parent = ExecuteFrame
+AAP.BackgroundColor3 = Color3.new(0.262745, 0.262745, 0.262745)
+AAP.BorderSizePixel = 0
+AAP.Size = UDim2.new(0, 200, 0, 50)
+AAP.Font = Enum.Font.GothamBold
+AAP.Text = "Murder Mystery 2"
+AAP.TextColor3 = Color3.new(1, 1, 1)
+AAP.TextSize = 20
+AAP.TextWrapped = true
+
+AAQ.Name = "AAQ"
+AAQ.Parent = ExecuteFrame
+AAQ.BackgroundColor3 = Color3.new(0.262745, 0.262745, 0.262745)
+AAQ.BorderSizePixel = 0
+AAQ.Size = UDim2.new(0, 200, 0, 50)
+AAQ.Font = Enum.Font.GothamBold
+AAQ.Text = "Flee The Facility"
+AAQ.TextColor3 = Color3.new(1, 1, 1)
+AAQ.TextSize = 20
+AAQ.TextWrapped = true
+
+AAR.Name = "AAR"
+AAR.Parent = ExecuteFrame
+AAR.BackgroundColor3 = Color3.new(0.262745, 0.262745, 0.262745)
+AAR.BorderSizePixel = 0
+AAR.Size = UDim2.new(0, 200, 0, 50)
+AAR.Font = Enum.Font.GothamBold
+AAR.Text = "Arsenal Multi-Function"
+AAR.TextColor3 = Color3.new(1, 1, 1)
+AAR.TextSize = 20
+AAR.TextWrapped = true
+
+AAS.Name = "AAS"
+AAS.Parent = ExecuteFrame
+AAS.BackgroundColor3 = Color3.new(0.262745, 0.262745, 0.262745)
+AAS.BorderSizePixel = 0
+AAS.Size = UDim2.new(0, 200, 0, 50)
+AAS.Font = Enum.Font.GothamBold
+AAS.Text = "Boys & Girls Hangout SS Luger"
+AAS.TextColor3 = Color3.new(1, 1, 1)
+AAS.TextScaled = true
+AAS.TextSize = 20
+AAS.TextWrapped = true
+
+AAT.Name = "AAT"
+AAT.Parent = ExecuteFrame
+AAT.BackgroundColor3 = Color3.new(0.262745, 0.262745, 0.262745)
+AAT.BorderSizePixel = 0
+AAT.Size = UDim2.new(0, 200, 0, 50)
+AAT.Font = Enum.Font.GothamBold
+AAT.Text = "FluxBreak (Fluxus Only)"
+AAT.TextColor3 = Color3.new(1, 1, 1)
+AAT.TextSize = 20
+AAT.TextWrapped = true
+
+AAU.Name = "AAU"
+AAU.Parent = ExecuteFrame
+AAU.BackgroundColor3 = Color3.new(0.262745, 0.262745, 0.262745)
+AAU.BorderSizePixel = 0
+AAU.Size = UDim2.new(0, 200, 0, 50)
+AAU.Font = Enum.Font.GothamBold
+AAU.Text = "Ninja Legends"
+AAU.TextColor3 = Color3.new(1, 1, 1)
+AAU.TextSize = 20
+AAU.TextWrapped = true
+
+AAV.Name = "AAV"
+AAV.Parent = ExecuteFrame
+AAV.BackgroundColor3 = Color3.new(0.262745, 0.262745, 0.262745)
+AAV.BorderSizePixel = 0
+AAV.Size = UDim2.new(0, 200, 0, 50)
+AAV.Font = Enum.Font.GothamBold
+AAV.Text = "Balloon Simulator 2"
+AAV.TextColor3 = Color3.new(1, 1, 1)
+AAV.TextSize = 20
+AAV.TextWrapped = true
+
+AAW.Name = "AAW"
+AAW.Parent = ExecuteFrame
+AAW.BackgroundColor3 = Color3.new(0.262745, 0.262745, 0.262745)
+AAW.BorderSizePixel = 0
+AAW.Size = UDim2.new(0, 200, 0, 50)
+AAW.Font = Enum.Font.GothamBold
+AAW.Text = "PotatoHub"
+AAW.TextColor3 = Color3.new(1, 1, 1)
+AAW.TextSize = 20
+AAW.TextWrapped = true
+
+AAX.Name = "AAX"
+AAX.Parent = ExecuteFrame
+AAX.BackgroundColor3 = Color3.new(0.262745, 0.262745, 0.262745)
+AAX.BorderSizePixel = 0
+AAX.Size = UDim2.new(0, 200, 0, 50)
+AAX.Font = Enum.Font.GothamBold
+AAX.Text = "Dex V4"
+AAX.TextColor3 = Color3.new(1, 1, 1)
+AAX.TextSize = 20
+AAX.TextWrapped = true
+
+IntroFrame.Name = "IntroFrame"
+IntroFrame.Parent = CocoHub
+IntroFrame.AnchorPoint = Vector2.new(0.5, 0.5)
+IntroFrame.BackgroundColor3 = Color3.new(1, 1, 1)
+IntroFrame.BackgroundTransparency = 1
+IntroFrame.ClipsDescendants = true
+IntroFrame.Position = UDim2.new(0.5, 0, 0.5, 0)
+IntroFrame.Image = "rbxassetid://3570695787"
+IntroFrame.ImageColor3 = Color3.new(0.137255, 0.137255, 0.137255)
+IntroFrame.ScaleType = Enum.ScaleType.Slice
+IntroFrame.SliceCenter = Rect.new(100, 100, 100, 100)
+
+IntroLogo.Name = "IntroLogo"
+IntroLogo.Parent = IntroFrame
+IntroLogo.BackgroundColor3 = Color3.new(1, 1, 1)
+IntroLogo.BackgroundTransparency = 1
+IntroLogo.BorderSizePixel = 0
+IntroLogo.Position = UDim2.new(0, 0, 1, 0)
+IntroLogo.Size = UDim2.new(1, 0, 1, 0)
+IntroLogo.Font = Enum.Font.GothamBold
+IntroLogo.Text = "C"
+IntroLogo.TextColor3 = Color3.new(1, 1, 1)
+IntroLogo.TextSize = 100
+IntroLogo.TextWrapped = true
+
+local function XYZLC_fake_script() -- CocoHub.NavigationFunction 
+	local script = Instance.new('Script', CocoHub)
+
+	wait(2)
+	script.Parent.IntroFrame:TweenSize(UDim2.new(0,150,0,150), "Out", "Quad", 0.5, true)
+	wait(0.5)
+	script.Parent.IntroFrame.IntroLogo:TweenPosition(UDim2.new(0,0,0,0), "Out", "Quad", 0.5, true)
+	wait(1)
+	script.Parent.IntroFrame:TweenSize(UDim2.new(0,0,0,0), "Out", "Quad", 0.5, true)
+	wait(1)
+	script.Parent.HubFrame:TweenPosition(UDim2.new(0.5,0,0.5,0), "Out", "Quad", 0.5, true)
+	
+	
+	script.Parent.HubFrame.TopbarFrame.Exit.MouseButton1Click:connect(function()
+		script.Parent.HubFrame:TweenSize(UDim2.new(0,0,0,0), "Out", "Quad", 0.5, true)
+		wait(0.5)
+		script.Parent.Parent.CocoHub:remove()
+	end)
+	
+	script.Parent.HubFrame.TopbarFrame.Minimize.MouseButton1Click:connect(function()
+		script.Parent.HubFrame:TweenPosition(UDim2.new(0.5,0,2,0), "Out", "Quad", 0.5, true)
+		wait(0.5)
+		script.Parent.ButtonFrame:TweenPosition(UDim2.new(1,-50,1,-50), "Out", "Quad", 0.5, true)
+	end)
+	
+	script.Parent.ButtonFrame.OpenButton.MouseButton1Click:connect(function()
+		script.Parent.ButtonFrame:TweenPosition(UDim2.new(1,-50,2,-50), "Out", "Quad", 0.5, true)
+		wait(0.5)
+		script.Parent.HubFrame:TweenPosition(UDim2.new(0.5,0,0.5,0), "Out", "Quad", 0.5, true)
+	end)
+end
+coroutine.wrap(XYZLC_fake_script)()
+local function YHCLS_fake_script() -- AAA.Script 
+	local script = Instance.new('Script', AAA)
+
+	script.Parent.MouseButton1Down:Connect(function()
+	loadstring(game:HttpGet(('https://raw.githubusercontent.com/NGHDDDX/ScriptHubScripts/master/CCAimbot'),true))()
+	end)
+end
+coroutine.wrap(YHCLS_fake_script)()
+local function VZPN_fake_script() -- AAB.Script 
+	local script = Instance.new('Script', AAB)
+
+	script.Parent.MouseButton1Down:Connect(function()
+	loadstring(game:HttpGet(("https://raw.githubusercontent.com/Denverrz/scripts/master/Zyrex_Hub.lua"),true))()
+	end)
+end
+coroutine.wrap(VZPN_fake_script)()
+local function LRQAKDW_fake_script() -- AAC.Script 
+	local script = Instance.new('Script', AAC)
+
+	script.Parent.MouseButton1Down:Connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/Denverrz/scripts/master/PRISONWARE_v1.3.txt"))();
+	end)
+end
+coroutine.wrap(LRQAKDW_fake_script)()
+local function ERWT_fake_script() -- AAD.Script 
+	local script = Instance.new('Script', AAD)
+
+	script.Parent.MouseButton1Down:Connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/Denverrz/scripts/master/BLOXWARE_v1.0.txt", true))();
+	end)
+end
+coroutine.wrap(ERWT_fake_script)()
+local function XTTZHKO_fake_script() -- AAE.Script 
+	local script = Instance.new('Script', AAE)
+
+	script.Parent.MouseButton1Down:Connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/Denverrz/scripts/master/Dragon_Ball_Ultimate_Autofarm_GUI_v1.0.txt", true))();
+	end)
+end
+coroutine.wrap(XTTZHKO_fake_script)()
+local function SAOGZI_fake_script() -- AAF.Script 
+	local script = Instance.new('Script', AAF)
+
+	script.Parent.MouseButton1Down:Connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/Denverrz/scripts/master/Kraken_Logger.txt", true))();
+	end)
+end
+coroutine.wrap(SAOGZI_fake_script)()
+local function WING_fake_script() -- AAG.Script 
+	local script = Instance.new('Script', AAG)
+
+	script.Parent.MouseButton1Down:Connect(function()
+	loadstring(game:HttpGet(("https://raw.githubusercontent.com/Denverrz/scripts/master/Kraken_Hub.txt"),true))()
+	end)
+end
+coroutine.wrap(WING_fake_script)()
+local function BGEOPU_fake_script() -- AAH.Script 
+	local script = Instance.new('Script', AAH)
+
+	script.Parent.MouseButton1Down:Connect(function()
+	loadstring(game:HttpGet(("hhttps://raw.githubusercontent.com/NGHDDDX/ScriptHubScripts/master/UltimateHatScript"),true))()
+	end)
+end
+coroutine.wrap(BGEOPU_fake_script)()
+local function QRKJLO_fake_script() -- AAI.Script 
+	local script = Instance.new('Script', AAI)
+
+	script.Parent.MouseButton1Down:Connect(function()
+	loadstring(game:HttpGet(("https://raw.githubusercontent.com/Denverrz/scripts/master/Invisible_Fling_Revamp.lua"),true))()
+	end)
+end
+coroutine.wrap(QRKJLO_fake_script)()
+local function LVTU_fake_script() -- AAJ.Script 
+	local script = Instance.new('Script', AAJ)
+
+	script.Parent.MouseButton1Down:Connect(function()
+	loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+	end)
+end
+coroutine.wrap(LVTU_fake_script)()
+local function ZVDT_fake_script() -- AAK.Script 
+	local script = Instance.new('Script', AAK)
+
+	script.Parent.MouseButton1Down:Connect(function()
+	_G.Toggle_GUI = "z" -- keybind to open/close gui
+	while not game:IsLoaded() do
+	    wait(0.1)
+	end
+	loadstring(game:HttpGet("https://pastebin.com/raw/mtrRP1H1", true))()
+	end)
+end
+coroutine.wrap(ZVDT_fake_script)()
+local function BPEBDMW_fake_script() -- AAL.Script 
+	local script = Instance.new('Script', AAL)
+
+	script.Parent.MouseButton1Down:Connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/NGHDDDX/ScriptHubScripts/master/JailTab"))();
+	end)
+end
+coroutine.wrap(BPEBDMW_fake_script)()
+local function HDCR_fake_script() -- AAM.Script 
+	local script = Instance.new('Script', AAM)
+
+	script.Parent.MouseButton1Down:Connect(function()
+	loadstring(game:HttpGet(("https://pastebin.com/raw/YYVLbzVg"), true))();
+	end)
+end
+coroutine.wrap(HDCR_fake_script)()
+local function GLBU_fake_script() -- AAN.Script 
+	local script = Instance.new('Script', AAN)
+
+	script.Parent.MouseButton1Down:Connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/NGHDDDX/ScriptHubScripts/master/MadCity"))();
+	end)
+end
+coroutine.wrap(GLBU_fake_script)()
+local function HIQVAM_fake_script() -- AAO.Script 
+	local script = Instance.new('Script', AAO)
+
+	script.Parent.MouseButton1Down:Connect(function()
+	loadstring(game:HttpGet("https://pastebin.com/raw/RPCYGzpu",true))()
+	end)
+end
+coroutine.wrap(HIQVAM_fake_script)()
+local function XSJW_fake_script() -- AAP.Script 
+	local script = Instance.new('Script', AAP)
+
+	script.Parent.MouseButton1Down:Connect(function()
+	loadstring(game:GetObjects("rbxassetid://4001118261")[1].Source)()
+	end)
+end
+coroutine.wrap(XSJW_fake_script)()
+local function WJSU_fake_script() -- AAQ.Script 
+	local script = Instance.new('Script', AAQ)
+
+	script.Parent.MouseButton1Down:Connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/NGHDDDX/ScriptHubScripts/master/Flee%20The%20Facility"))();
+	end)
+end
+coroutine.wrap(WJSU_fake_script)()
+local function CVLUFR_fake_script() -- AAR.Script 
+	local script = Instance.new('Script', AAR)
+
+	script.Parent.MouseButton1Down:Connect(function()
+		loadstring(game:HttpGet('https://pastebin.com/raw/T3fzg7tm', true))()
+	end)
+end
+coroutine.wrap(CVLUFR_fake_script)()
+local function ATVK_fake_script() -- AAS.Script 
+	local script = Instance.new('Script', AAS)
+
+	script.Parent.MouseButton1Down:Connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/NGHDDDX/ScriptHubScripts/master/BoysAndGirlsHangoutScript"))();
+	end)
+end
+coroutine.wrap(ATVK_fake_script)()
+local function WNBQOCL_fake_script() -- AAT.Script 
+	local script = Instance.new('Script', AAT)
+
+	script.Parent.MouseButton1Down:Connect(function()
+	loadstring(game:HttpGet(("https://fluxteam.xyz/scripts/fluxbreak/fluxbreak.lua"), true))()
+	end)
+end
+coroutine.wrap(WNBQOCL_fake_script)()
+local function ZOHXEJX_fake_script() -- AAU.Script 
+	local script = Instance.new('Script', AAU)
+
+	script.Parent.MouseButton1Down:Connect(function()
+	loadstring(game:HttpGet("https://pastebin.com/raw/u61dJDq7",true))()
+	end)
+end
+coroutine.wrap(ZOHXEJX_fake_script)()
+local function VBEYWYV_fake_script() -- AAV.Script 
+	local script = Instance.new('Script', AAV)
+
+	script.Parent.MouseButton1Down:Connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/Hillsides/Game-Frickers/master/Balloon%20Simulator%202%20%5BPreview%20Of%20Dogey%20Hub%5D.lua",true))()
+	end)
+end
+coroutine.wrap(VBEYWYV_fake_script)()
+local function FIJIHN_fake_script() -- AAW.Script 
+	local script = Instance.new('Script', AAW)
+
+	script.Parent.MouseButton1Down:Connect(function()
+	loadstring(game:HttpGet(('https://www.potato-hub.com/PotatoHub.lua'),true))()
+	end)
+end
+coroutine.wrap(FIJIHN_fake_script)()
+local function SZYB_fake_script() -- AAX.Script 
+	local script = Instance.new('Script', AAX)
+
+	script.Parent.MouseButton1Down:Connect(function()
+	loadstring(game:GetObjects('rbxassetid://2180084478')[1].Source)()
+	end)
+end
+coroutine.wrap(SZYB_fake_script)()
+local function SWBUS_fake_script() -- HubFrame.DraggingScript 
+	local script = Instance.new('LocalScript', HubFrame)
+
+	local UserInputService = game:GetService("UserInputService")
+	
+	local gui = script.Parent
+	
+	local dragging
+	local dragInput
+	local dragStart
+	local startPos
+	
+	local function update(input)
+		local delta = input.Position - dragStart
+		gui.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+	end
+	
+	gui.InputBegan:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+			dragging = true
+			dragStart = input.Position
+			startPos = gui.Position
+			
+			input.Changed:Connect(function()
+				if input.UserInputState == Enum.UserInputState.End then
+					dragging = false
+				end
+			end)
+		end
+	end)
+	
+	gui.InputChanged:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+			dragInput = input
+		end
+	end)
+	
+	UserInputService.InputChanged:Connect(function(input)
+		if input == dragInput and dragging then
+			update(input)
+		end
+	end)
+end
+coroutine.wrap(SWBUS_fake_script)()
