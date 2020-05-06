@@ -631,7 +631,7 @@ local function ZOHXEJX_fake_script() -- AAU.Script
 	local script = Instance.new('Script', AAU)
 
 	script.Parent.MouseButton1Down:Connect(function()
-	loadstring(game:HttpGet("https://pastebin.com/raw/u61dJDq7",true))()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/NGHDDDX/ScriptHubScripts/master/NinjaLegends",true))()
 	end)
 end
 coroutine.wrap(ZOHXEJX_fake_script)()
