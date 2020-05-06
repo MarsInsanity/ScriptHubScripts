@@ -1,0 +1,375 @@
+local heartbeat = game:GetService("RunService")
+heartbeat.RenderStepped:connect(function()
+	for i = 1, 10 do
+       game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge
+       game.Players.LocalPlayer.SimulationRadius = math.pow(math.huge,math.huge)*math.huge
+	end
+end)
+
+local library = loadstring(game:HttpGet("https://pastebin.com/raw/zH17BK2a"))()
+local win = library:CreateWindow({
+	text="Direct Movement"
+})
+local win2 = library:CreateWindow({
+	text="Rotation"
+})
+local win3 = library:CreateWindow({
+	text="Misc"
+})
+
+local fullCircle = 2 * math.pi
+local radius = 10
+_G.RotatingAroundCharacter = false
+_G.Following = false
+_G.Storm = false
+_G.StormRadius = 5
+_G.ClickTP = false
+_G.Snake = false
+_G.Collision = false
+_G.Speed = 5
+_G.SBDI = true
+_G.BuildingTool = false
+_G.SpiralAroundCharacter = false
+_G.Unpredictable = false
+_G.BigPP = false
+_G.PlayNotificationWhenHDFinished = false
+
+function checkIfPlayerParent(obj)
+	local e = false
+	for i,v in pairs(game.Players:GetPlayers()) do
+		if v.Character ~= nil then
+			if obj.Parent == v.Parent then
+				e = true
+			end
+		end
+	end
+	return e
+end
+
+local function getXAndZPositions(angle)
+	local x = math.cos(angle) * radius
+	local z = math.sin(angle) * radius
+	return x, z
+end
+
+function FindPlayerFromString(stringa)
+	local t = nil
+	if stringa == "" then
+		return nil
+	else
+		for i,v in pairs(game.Players:GetPlayers()) do
+			if string.match(v.Name, stringa) ~= nil then
+				t = v
+			end
+		end
+	end
+	return t
+end
+
+function GetAllBodyMovers()
+	local e = { }
+	for i,v in pairs(workspace:GetChildren()) do
+		if v:IsA("Accessory") then
+			if v.Handle:FindFirstChild("BodyPosition") ~= nil then
+				table.insert(e, v.Handle.BodyPosition)
+			end
+		end
+	end
+	for i,v in pairs(workspace:GetDescendants()) do
+		if v:IsA("BasePart") and not v.Anchored and checkIfPlayerParent(v) then
+			table.insert(e, v.BodyPosition)
+		end
+	end
+	return e
+end	
+function GetAllRotationalMovers()
+	local e = { }
+	for i,v in pairs(workspace:GetDescendants()) do
+		if v:IsA("Accessory") then
+			if v:FindFirstChild("Handle") then
+				if v.Handle:FindFirstChild("BodyAngularVelocity") ~= nil then
+					table.insert(e, v.Handle.BodyAngularVelocity)
+				end
+			end
+		end
+		if v:IsA("BasePart") and not checkIfPlayerParent(v) then
+			if not v.Anchored and v:FindFirstChild("BodyAngularVelocity") ~= nil then
+				table.insert(e, v.BodyAngularVelocity)
+			end
+		end
+	end
+	return e
+end
+
+function GetHandles()
+	local Handles = { }
+	for i,v in pairs(workspace:GetChildren()) do
+		if v:IsA("Accessory") then
+			table.insert(Handles, v.Handle)
+		end
+	end
+	for i,v in pairs(workspace:GetDescendants()) do
+		if v:IsA("BasePart") and not v.Anchored and not checkIfPlayerParent(v) then
+			table.insert(Handles, v)
+		end
+	end
+	return Handles
+end
+
+function BodyMoversToPlayerWithOffset(plr, offset)
+	for i=1, #offset, 1 do
+		GetAllBodyMovers()[i].Position = plr.Character.HumanoidRootPart.Position + Vector3.new(offset[i][1], offset[i][2],offset[i][3])
+	end
+end
+
+function GetPlayerParts()
+	local p =  { }
+	for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+		if v:IsA("MeshPart") or v:IsA("Part") and v.Name ~= "HumanoidRootPart" and v.Name ~= "Head" then
+			table.insert(p, v)
+		end
+	end
+	return p
+end
+
+win3:AddBox("Drop Hat Amount", function(i)
+	for i = 1, tonumber(i.Text), 1 do
+		for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+			if v:IsA("Accessory") then
+				v.Handle.SpecialMesh:Destroy()
+				v.Parent = workspace
+			end
+		end
+		game.Players.LocalPlayer.Character.Humanoid.Health = 0
+		for i,v in pairs(GetAllBodyMovers()) do
+			v:Destroy()
+		end
+		for i,v in pairs(workspace:GetChildren()) do
+			if v:IsA("Accessory") then
+				Instance.new("BodyPosition", v.Handle)
+			end
+		end
+		while wait() do
+			if game.Players.LocalPlayer.Character ~= nil then
+				if game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health == 100 then
+					wait(2) 
+					break
+				end
+			end
+		end
+	end
+	-- hat drop finished
+	if _G.PlayNotificationWhenHDFinished then
+		local s = Instance.new("Sound", workspace)
+		s.SoundId = "rbxassetid://138222365"
+		s:Play()
+	end
+end)
+
+win:AddBox("Follow Player", function(i)
+	_G.target = FindPlayerFromString(i.Text)
+end)
+
+win:AddButton("Freeze Parts", function(i)
+	for i,v in pairs(GetAllBodyMovers()) do
+		v.P = 0
+		v.Parent.Anchored = true
+	end
+end)
+win3:AddButton("Create Wall", function(i)
+	BodyMoversToPlayerWithOffset(game.Players.LocalPlayer, {{4.04514027, -2.51024914, 4.20762253},{2.94030762, -2.51887441, 4.20716953},{1.8611927, -2.51808405, 4.20723343},{0.750733376, -2.51808405, 4.20723343},{-0.344085693, -2.51808405, 4.20723343},{-1.47018528, -2.51808405, 4.20723343},{-2.62756634, -2.51808405, 4.20723343},{-3.76930618, -2.51808405, 4.20723343},{0.750733376, -1.53274679, 4.20723343},{-3.76930618, -1.53274679, 4.20723343},{-2.62756634, -1.53274679, 4.20723343},{-1.47018528, -1.53274679, 4.20723343},{-0.344085693, -1.53274679, 4.20723343},{4.04611683, -1.51707006, 4.20762253},{2.94024277, -1.53478777, 4.20697784},{1.8611927, -1.53274679, 4.20723343},{0.750733376, -0.547409534, 4.20723343},{-3.76930618, -0.547409534, 4.20723343},{-2.62756634, -0.547409534, 4.20723343},{-1.47018528, -0.547409534, 4.20723343},{-0.344085693, -0.547409534, 4.20723343},{-0.328445435, 0.437927723, 4.20723343},{-3.76930618, 0.437927723, 4.20723343},{-2.61192608, 0.437927723, 4.20723343},{2.95601177, 0.453567982, 4.20723343},{1.87683296, 0.453567982, 4.20723343},{0.766373634, 0.437927723, 4.20723343},{4.05832386, 0.470264912, 4.21250534},{-1.45454502, 0.437927723, 4.20723343},{4.04465199, -0.525355577, 4.20615768},{2.94037151, -0.547409534, 4.20723343},{1.8611927, -0.547409534, 4.20723343},{-0.328445435, 1.42326498, 4.20723343},{0.750733376, 1.42326498, 4.20723343},{1.8611927, 1.43890524, 4.20723343},{-2.62756634, 1.42326498, 4.20723343},{-3.76930618, 1.42326498, 4.20723343},{-1.45454502, 1.42326498, 4.20723343},{2.94037151, 1.43890524, 4.20723343},{4.05588245, 1.46832705, 4.20762253}})
+end)
+win3:AddButton("Create 'Titan'", function(i)
+	BodyMoversToPlayerWithOffset(game.Players.LocalPlayer, {{1.73335278, -2.49901843, 5.82674456},{1.73335278, -2.49901843, 4.83817291},{0.708164454, -2.49901843, 4.83817291},{0.708164454, -2.49901843, 5.82340288},{-2.13256407, -2.49901843, 5.82340288},{-2.13256407, -2.49901843, 4.83817291},{-1.1073761, -2.49901843, 5.82674456},{-1.1073761, -2.49901843, 4.83817291},{-2.13256407, -2.49901843, 5.82340288},{-2.13256407, -2.49901843, 4.83817291},{-1.1073761, -2.49901843, 5.82674456},{-1.1073761, -2.49901843, 4.83817291},{-2.13256407, -1.45031333, 4.83817291},{-2.13256407, -1.45031333, 5.82340288},{-1.1073761, -1.45031333, 4.83817291},{-1.1073761, -1.45031333, 5.82674456},{0.708164454, -1.45031333, 5.82340288},{0.708164454, -1.45031333, 4.83817291},{1.73335278, -1.45031333, 5.82674456},{-2.13256407, -1.45031333, 5.82340288},{-2.13256407, -1.45031333, 4.83817291},{-1.1073761, -1.45031333, 5.82674456},{-1.1073761, -1.45031333, 4.83817291},{1.73335278, -1.45031333, 4.83817291},{-2.13256407, -0.419409037, 4.83817291},{-2.13256407, -0.419409037, 5.82340288},{-1.1073761, -0.419409037, 4.83817291},{-1.1073761, -0.419409037, 5.82674456},{0.708164454, -0.419409037, 5.82340288},{0.708164454, -0.419409037, 4.83817291},{1.73335278, -0.419409037, 5.82674456},{-2.13256407, -0.419409037, 5.82340288},{-2.13256407, -0.419409037, 4.83817291},{-1.1073761, -0.419409037, 5.82674456},{-1.1073761, -0.419409037, 4.83817291},{1.73335278, -0.419409037, 4.83817291},{-2.13256407, 0.588629246, 4.83817291},{-2.13256407, 0.588629246, 5.82340288},{-1.1073761, 0.588629246, 4.83817291},{-1.1073761, 0.588629246, 5.82674456},{0.708164454, 0.588629246, 5.82340288},{0.708164454, 0.588629246, 4.83817291},{1.73335278, 0.588629246, 5.82674456},{-2.13256407, 0.588629246, 5.82340288},{-2.13256407, 0.588629246, 4.83817291},{-1.1073761, 0.588629246, 5.82674456},{-1.1073761, 0.588629246, 4.83817291},{1.73335278, 0.588629246, 4.83817291},{-2.46800375, 1.7510066, 4.83817291},{-2.46800375, 1.7510066, 5.82340288},{-1.44281578, 1.7510066, 4.83817291},{-1.44281578, 1.7510066, 5.82674456},{0.941819429, 1.7510066, 5.82340288},{0.941819429, 1.7510066, 4.83817291},{1.96700776, 1.7510066, 5.82674456},{-2.46800375, 1.7510066, 5.82340288},{-2.46800375, 1.7510066, 4.83817291},{-1.44281578, 1.7510066, 5.82674456},{-1.44281578, 1.7510066, 4.83817291},{1.96700776, 1.7510066, 4.83817291},{-0.215696335, 1.7510066, 4.83817291},{-0.215696335, 1.7510066, 5.86403561},{-0.215696335, 2.79895067, 4.83817291},{-1.44281578, 2.79895067, 5.82674456},{-2.46800375, 2.79895067, 4.83817291},{-2.46800375, 2.79895067, 5.82340288},{-1.44281578, 2.79895067, 4.83817291},{-1.44281578, 2.79895067, 5.82674456},{1.96700776, 2.79895067, 4.83817291},{-1.44281578, 2.79895067, 4.83817291},{1.96700776, 2.79895067, 5.82674456},{0.941819429, 2.79895067, 5.82340288},{0.941819429, 2.79895067, 4.83817291},{-2.46800375, 2.79895067, 4.83817291},{-2.46800375, 2.79895067, 5.82340288},{-0.215696335, 2.79895067, 5.86403561},{-0.215696335, 3.88401508, 4.83817291},{-1.44281578, 3.88401508, 5.82674456},{-2.46800375, 3.88401508, 4.83817291},{-2.46800375, 3.88401508, 5.82340288},{-1.44281578, 3.88401508, 4.83817291},{-1.44281578, 3.88401508, 5.82674456},{1.96700776, 3.88401508, 4.83817291},{-1.44281578, 3.88401508, 4.83817291},{1.96700776, 3.88401508, 5.82674456},{0.941819429, 3.88401508, 5.82340288},{0.941819429, 3.88401508, 4.83817291},{-2.46800375, 3.88401508, 4.83817291},{-2.46800375, 3.88401508, 5.82340288},{-0.215696335, 3.88401508, 5.86403561},{-0.215696335, 4.90682411, 4.83817291},{-1.44281578, 4.90682411, 5.82674456},{-2.46800375, 4.90682411, 4.83817291},{-2.46800375, 4.90682411, 5.82340288},{-1.44281578, 4.90682411, 4.83817291},{-1.44281578, 4.90682411, 5.82674456},{1.96700776, 4.90682411, 4.83817291},{-1.44281578, 4.90682411, 4.83817291},{1.96700776, 4.90682411, 5.82674456},{0.941819429, 4.90682411, 5.82340288},{0.941819429, 4.90682411, 4.83817291},{-2.46800375, 4.90682411, 4.83817291},{-2.46800375, 4.90682411, 5.82340288},{-0.215696335, 4.90682411, 5.86403561},{-0.215696335, 5.92895126, 4.83817291},{-1.44281578, 5.92895126, 5.82674456},{-2.46800375, 5.92895126, 4.83817291},{-2.46800375, 5.92895126, 5.82340288},{-1.44281578, 5.92895126, 4.83817291},{-1.44281578, 5.92895126, 5.82674456},{1.96700776, 5.92895126, 4.83817291},{-1.44281578, 5.92895126, 4.83817291},{1.96700776, 5.92895126, 5.82674456},{0.941819429, 5.92895126, 5.82340288},{0.941819429, 5.92895126, 4.83817291},{-2.46800375, 5.92895126, 4.83817291},{-2.46800375, 5.92895126, 5.82340288},{-0.215696335, 5.92895126, 5.86403561},{-2.46800375, 5.92895126, 4.83817291},{-3.52440977, 4.90682411, 4.83817291},{-3.52440977, 5.92895126, 4.83817291},{-3.52440977, 5.92895126, 5.82340288},{-3.52440977, 4.90682411, 5.82340288},{-4.57180357, 4.90682411, 4.83817291},{-4.57180357, 5.92895126, 4.83817291},{-4.57180357, 5.92895126, 5.82340288},{-4.57180357, 4.90682411, 5.82340288},{-5.68480349, 4.90682411, 4.83817291},{-5.68480349, 5.92895126, 4.83817291},{-5.68480349, 5.92895126, 5.82340288},{-5.68480349, 4.90682411, 5.82340288},{-6.74174166, 4.90682411, 4.83817291},{-6.74174166, 5.92895126, 4.83817291},{-6.74174166, 5.92895126, 5.82340288},{-6.74174166, 4.90682411, 5.82340288},{4.14584589, 5.92895126, 5.82340288},{5.25884581, 5.92895126, 5.82340288},{5.25884581, 5.92895126, 4.83817291},{5.25884581, 4.90682411, 5.82340288},{5.25884581, 4.90682411, 4.83817291},{4.14584589, 4.90682411, 4.83817291},{4.14584589, 4.90682411, 5.82340288},{4.14584589, 5.92895126, 4.83817291},{6.3062396, 4.90682411, 5.82340288},{6.3062396, 5.92895126, 4.83817291},{6.3062396, 4.90682411, 4.83817291},{6.3062396, 5.92895126, 5.82340288},{3.08890772, 4.90682411, 4.83817291},{3.08890772, 5.92895126, 5.82340288},{3.08890772, 4.90682411, 5.82340288},{3.08890772, 5.92895126, 4.83817291},{0.941819429, 7.00032902, 5.82340288},{-0.215696335, 7.00032902, 4.83817291},{-0.215696335, 7.00032902, 5.86403561},{0.941819429, 7.00032902, 4.83817291},{-1.44281578, 7.00032902, 4.83817291},{-1.44281578, 7.00032902, 5.82674456},{0.941819429, 8.03185558, 5.82340288},{-0.215696335, 8.03185558, 4.83817291},{-0.215696335, 8.03185558, 5.86403561},{0.941819429, 8.03185558, 4.83817291},{-1.44281578, 8.03185558, 4.83817291},{-1.44281578, 8.03185558, 5.82674456},{0.941819429, 9.08406162, 5.82340288},{-0.215696335, 9.08406162, 4.83817291},{-0.215696335, 9.08406162, 5.86403561},{0.941819429, 9.08406162, 4.83817291},{-1.44281578, 9.08406162, 4.83817291},{-1.44281578, 9.08406162, 5.82674456}})
+end)
+win:AddButton("Unfreeze Parts", function(i)
+	for i,v in pairs(GetAllBodyMovers()) do
+		v.P = 10000
+		v.Parent.Anchored = false
+	end
+end)
+win2:AddButton("Add Rotation", function(i)
+	for i,v in pairs(workspace:GetChildren()) do
+		if v:IsA("Accessory") then
+			Instance.new("BodyAngularVelocity", v.Handle)
+		end
+	end
+end)
+local dropdown = win2:AddDropdown({'X', 'Y','Z'}, function(a)
+	if a == 'X' then
+		for i,v in pairs(GetAllRotationalMovers()) do
+			v.AngularVelocity = Vector3.new(_G.Speed,0,0)
+		end
+	end
+	if a == 'Y' then
+		for i,v in pairs(GetAllRotationalMovers()) do
+			v.AngularVelocity = Vector3.new(0,_G.Speed,0)
+		end
+	end
+	if a == 'Z' then
+		for i,v in pairs(GetAllRotationalMovers()) do
+			v.AngularVelocity = Vector3.new(0,0,_G.Speed)
+		end
+	end
+end)
+win2:AddButton("Remove Rotation", function(i)
+	for i,v in pairs(GetAllRotationalMovers()) do
+		v:Destroy()
+	end
+end)
+win3:AddBox("Storm Radius", function(i)
+	_G.StormRadius = tonumber(i.Text)
+end)
+local dropdown = win3:AddDropdown({'None', 'Storm Mode'}, function(a)
+	if a == 'Storm Mode' then
+		print("Storm Mode: on")
+		_G.Storm = true
+		_G.RotatingAroundCharacter = false
+		_G.SpiralAroundCharacter = false
+	end
+	if a == 'None' then
+		_G.Storm = false
+		_G.RotatingAroundCharacter = false
+		_G.SpiralAroundCharacter = false
+	end
+end)
+win:AddToggle("Mouse Control", function(v)
+	_G.MouseControl = v
+end)
+win3:AddToggle("Play Sound After Hatdrop", function(v)
+	_G.PlayNotificationWhenHDFinished = v
+end)
+win:AddToggle("Fast Mode", function(v)
+	_G.Unpredictable = v
+end)
+win:AddToggle("Click TP", function(v)
+	_G.ClickTP = v
+end)
+win:AddToggle("Snake", function(v)
+	_G.Snake = v
+end)
+win3:AddToggle("Collision", function(v)
+	_G.Collision = v
+end)
+win3:AddToggle("Build", function(v)
+	_G.BuildingTool = v
+end)
+win2:AddButton("Add Gyroscope", function(v)
+	for i,v in pairs(workspace:GetChildren()) do
+		if v:IsA("Accessory") then
+			Instance.new("BodyGyro", v.Handle)
+		end
+	end
+end)
+win2:AddButton("Remove Gyroscope", function(v)
+	for i,v in pairs(workspace:GetChildren()) do
+		if v:IsA("Accessory") then
+			if v.Handle:FindFirstChild("BodyGyro") ~= nil then
+				v.Handle:FindFirstChild("BodyGyro"):Destroy()
+			end
+		end
+	end
+end)
+
+
+win3:AddButton("Update", function()
+	for i,v in pairs(GetAllBodyMovers()) do
+		v:Destroy()
+	end
+	for i,v in pairs(workspace:GetChildren()) do
+		if v:IsA("Accessory") then
+			Instance.new("BodyPosition", v.Handle)
+		end
+	end
+end)
+
+game.Players.LocalPlayer:GetMouse().Button1Down:connect(function()
+	if _G.ClickTP then
+		for i,v in pairs(GetAllBodyMovers()) do
+			v.Position = game.Players.LocalPlayer:GetMouse().Hit.p
+		end
+	end
+	if _G.BuildingTool then
+		if #GetHandles() ~= 0 then
+			local Brick = GetHandles()[math.random(1,#GetHandles())]
+			Brick.Position = game.Players.LocalPlayer:GetMouse().Hit.p
+			Brick.Anchored = true
+		end
+	end
+end)
+
+while wait() do
+	for i,v in pairs(GetAllBodyMovers()) do
+		if _G.target ~= nil then
+			v.Position = _G.target.Character.HumanoidRootPart.Position
+		end
+	end
+	if _G.Storm then
+		for i,v in pairs(GetAllBodyMovers()) do
+			if _G.StormRadius == nil then
+				v.Position = Vector3.new(v.Position.X+math.random(-30,30),v.Position.Y+math.random(-30,30),v.Position.Z+math.random(-30,30))
+			else
+				v.Position = Vector3.new(v.Position.X+math.random(-_G.StormRadius,_G.StormRadius),v.Position.Y+math.random(-_G.StormRadius,_G.StormRadius),v.Position.Z+math.random(-_G.StormRadius,_G.StormRadius))
+			end
+		end	
+	end
+	if _G.MouseControl == true then
+		for i,v in pairs(GetAllBodyMovers()) do
+			v.Position = game.Players.LocalPlayer:GetMouse().Hit.p
+		end
+	end
+	for i,v in pairs(GetAllBodyMovers()) do
+		v.Parent.CanCollide = _G.Collision
+	end
+	if _G.Snake then
+		for i,v in pairs(GetAllBodyMovers()) do
+			if i == 1 then
+				if game.Players.LocalPlayer.Character ~= nil then
+					v.Position = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+				end
+			end
+			if i ~= 1 then
+				if GetAllBodyMovers()[i].Position ~= GetAllBodyMovers()[i-1].Position-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector then
+					GetAllBodyMovers()[i].Position = GetAllBodyMovers()[i-1].Position-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector
+				end
+			end
+		end
+	end
+	if _G.RotatingAroundCharacter then
+		if game.Players.LocalPlayer.Character ~= nil then
+			for i,v in pairs(GetHandles()) do
+				local angle = i * (fullCircle / #GetHandles())
+				local x, z = getXAndZPositions(angle)
+			
+				local position = (game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(x, 0, z)).p
+				local lookAt = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+				
+				v.CFrame = CFrame.new(position, lookAt)
+			end
+		end
+	end
+	if _G.SpiralAroundCharacter then
+		val = 0
+		if game.Players.LocalPlayer.Character ~= nil then
+			for i,v in pairs(GetHandles()) do
+				local angle = i * (fullCircle / #GetHandles())
+				local x, z = getXAndZPositions(angle)
+				val = val + 1.50
+			
+				local position = (game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(x, val, z)).p
+				local lookAt = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+				
+				v.CFrame = CFrame.new(position, lookAt)
+			end
+		end
+	end
+	if _G.Unpredictable then
+		for i,v in pairs(GetAllBodyMovers()) do
+			v.D = 0
+		end
+	else
+		for i,v in pairs(GetAllBodyMovers()) do
+			v.D = 1250
+		end
+	end
+end
