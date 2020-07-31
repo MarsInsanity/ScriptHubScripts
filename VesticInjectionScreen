@@ -1,7 +1,12 @@
--- Gui to Lua
--- Version: 3.2
+--[[
+ __  __    __    ____  ____    ____  _  _    _  _  __  ____  ____ 
+(  \/  )  /__\  (  _ \( ___)  (  _ \( \/ )  ( \( )/. |(  _ \(_  _)
+ )    (  /(__)\  )(_) ))__)    ) _ < \  /    )  ((_  _))   / _)(_ 
+(_/\/\_)(__)(__)(____/(____)  (____/ (__)   (_)\_) (_)(_)\_)(____)
 
--- Instances:
+This injection screen was made by N4ri for an exploit named Vestic,
+made by iFinal. This injection screen is not meant to be skidded.
+]]--
 
 local VesticInjection = Instance.new("ScreenGui")
 local MainFrame = Instance.new("Frame")
@@ -15,8 +20,6 @@ local T3 = Instance.new("TextLabel")
 local T4 = Instance.new("TextLabel")
 local T5 = Instance.new("TextLabel")
 local T6 = Instance.new("TextLabel")
-
---Properties:
 
 VesticInjection.Name = "VesticInjection"
 VesticInjection.Parent = game.CoreGui
@@ -153,12 +156,9 @@ T6.TextScaled = true
 T6.TextSize = 14.000
 T6.TextWrapped = true
 
--- Scripts:
-
-local function JZIX_fake_script() -- VesticInjection.LocalScript 
+local function JZIX_fake_script()
 	local script = Instance.new('LocalScript', VesticInjection)
 
-	wait(2)
 	script.Parent.MainFrame.InternalizedFrame.BackgroundTransparency = 0
 	script.Parent.MainFrame.InternalizedFrame:TweenSize(UDim2.new(0,133,0,133), "Out", "Quad", 0.5, true)
 	script.Parent.MainFrame.InternalizedFrame.Vestic1.ImageTransparency = 1
@@ -309,7 +309,6 @@ local function JZIX_fake_script() -- VesticInjection.LocalScript
 	wait(0.02)
 	script.Parent.MainFrame.InternalizedFrame.Vestic1.ImageTransparency = 1
 	script.Parent.MainFrame.InternalizedFrame.Vestic2.ImageTransparency = 1
-	wait(0.5)
 	script.Parent.MainFrame.InternalizedFrame.BackgroundTransparency = 1
 end
 coroutine.wrap(JZIX_fake_script)()
