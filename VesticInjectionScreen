@@ -1,0 +1,315 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local VesticInjection = Instance.new("ScreenGui")
+local MainFrame = Instance.new("Frame")
+local InternalizedFrame = Instance.new("Frame")
+local UICorner = Instance.new("UICorner")
+local Vestic2 = Instance.new("ImageLabel")
+local Vestic1 = Instance.new("ImageLabel")
+local T1 = Instance.new("TextLabel")
+local T2 = Instance.new("TextLabel")
+local T3 = Instance.new("TextLabel")
+local T4 = Instance.new("TextLabel")
+local T5 = Instance.new("TextLabel")
+local T6 = Instance.new("TextLabel")
+
+--Properties:
+
+VesticInjection.Name = "VesticInjection"
+VesticInjection.Parent = game.CoreGui
+VesticInjection.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+MainFrame.Name = "MainFrame"
+MainFrame.Parent = VesticInjection
+MainFrame.AnchorPoint = Vector2.new(0.5, 0.5)
+MainFrame.BackgroundColor3 = Color3.fromRGB(21, 21, 21)
+MainFrame.BackgroundTransparency = 1.000
+MainFrame.BorderSizePixel = 0
+MainFrame.ClipsDescendants = true
+MainFrame.Position = UDim2.new(0.5, 0, 0.5, 0)
+MainFrame.Size = UDim2.new(0, 254, 0, 167)
+
+InternalizedFrame.Name = "InternalizedFrame"
+InternalizedFrame.Parent = MainFrame
+InternalizedFrame.AnchorPoint = Vector2.new(0.5, 0.5)
+InternalizedFrame.BackgroundColor3 = Color3.fromRGB(21, 21, 21)
+InternalizedFrame.BackgroundTransparency = 1.000
+InternalizedFrame.ClipsDescendants = true
+InternalizedFrame.Position = UDim2.new(0.5, 0, 0.5, 0)
+
+UICorner.CornerRadius = UDim.new(0.5, 0)
+UICorner.Parent = InternalizedFrame
+
+Vestic2.Name = "Vestic2"
+Vestic2.Parent = InternalizedFrame
+Vestic2.Active = true
+Vestic2.AnchorPoint = Vector2.new(0.5, 0.5)
+Vestic2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Vestic2.BackgroundTransparency = 1.000
+Vestic2.BorderSizePixel = 0
+Vestic2.ClipsDescendants = true
+Vestic2.Position = UDim2.new(0.5, 0, 0.5, 0)
+Vestic2.Size = UDim2.new(0.714285731, 0, 0.714285731, 0)
+Vestic2.Image = "http://www.roblox.com/asset/?id=5472245401"
+Vestic2.ImageTransparency = 1.000
+
+Vestic1.Name = "Vestic1"
+Vestic1.Parent = InternalizedFrame
+Vestic1.Active = true
+Vestic1.AnchorPoint = Vector2.new(0.5, 0.5)
+Vestic1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Vestic1.BackgroundTransparency = 1.000
+Vestic1.BorderSizePixel = 0
+Vestic1.ClipsDescendants = true
+Vestic1.Position = UDim2.new(0.5, 0, 0.5, 0)
+Vestic1.Size = UDim2.new(0.714285731, 0, 0.714285731, 0)
+Vestic1.Image = "http://www.roblox.com/asset/?id=5472244764"
+Vestic1.ImageTransparency = 1.000
+
+T1.Name = "T1"
+T1.Parent = MainFrame
+T1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+T1.BackgroundTransparency = 1.000
+T1.BorderSizePixel = 0
+T1.Position = UDim2.new(0, 0, -1, 0)
+T1.Size = UDim2.new(0, 42, 0, 42)
+T1.Font = Enum.Font.Gotham
+T1.Text = "V"
+T1.TextColor3 = Color3.fromRGB(255, 255, 255)
+T1.TextScaled = true
+T1.TextSize = 14.000
+T1.TextWrapped = true
+
+T2.Name = "T2"
+T2.Parent = MainFrame
+T2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+T2.BackgroundTransparency = 1.000
+T2.BorderSizePixel = 0
+T2.Position = UDim2.new(0.166999996, 0, 1, 0)
+T2.Size = UDim2.new(0, 42, 0, 42)
+T2.Font = Enum.Font.Gotham
+T2.Text = "E"
+T2.TextColor3 = Color3.fromRGB(255, 255, 255)
+T2.TextScaled = true
+T2.TextSize = 14.000
+T2.TextWrapped = true
+
+T3.Name = "T3"
+T3.Parent = MainFrame
+T3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+T3.BackgroundTransparency = 1.000
+T3.BorderSizePixel = 0
+T3.Position = UDim2.new(0.333999991, 0, -1, 0)
+T3.Size = UDim2.new(0, 42, 0, 42)
+T3.Font = Enum.Font.Gotham
+T3.Text = "S"
+T3.TextColor3 = Color3.fromRGB(255, 255, 255)
+T3.TextScaled = true
+T3.TextSize = 14.000
+T3.TextWrapped = true
+
+T4.Name = "T4"
+T4.Parent = MainFrame
+T4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+T4.BackgroundTransparency = 1.000
+T4.BorderSizePixel = 0
+T4.Position = UDim2.new(0.500999987, 0, 1, 0)
+T4.Size = UDim2.new(0, 42, 0, 42)
+T4.Font = Enum.Font.Gotham
+T4.Text = "T"
+T4.TextColor3 = Color3.fromRGB(255, 255, 255)
+T4.TextScaled = true
+T4.TextSize = 14.000
+T4.TextWrapped = true
+
+T5.Name = "T5"
+T5.Parent = MainFrame
+T5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+T5.BackgroundTransparency = 1.000
+T5.BorderSizePixel = 0
+T5.Position = UDim2.new(0.667999983, 0, -1, 0)
+T5.Size = UDim2.new(0, 42, 0, 42)
+T5.Font = Enum.Font.Gotham
+T5.Text = "I"
+T5.TextColor3 = Color3.fromRGB(255, 255, 255)
+T5.TextScaled = true
+T5.TextSize = 14.000
+T5.TextWrapped = true
+
+T6.Name = "T6"
+T6.Parent = MainFrame
+T6.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+T6.BackgroundTransparency = 1.000
+T6.BorderSizePixel = 0
+T6.Position = UDim2.new(0.833999991, 0, 1, 0)
+T6.Size = UDim2.new(0, 42, 0, 42)
+T6.Font = Enum.Font.Gotham
+T6.Text = "C"
+T6.TextColor3 = Color3.fromRGB(255, 255, 255)
+T6.TextScaled = true
+T6.TextSize = 14.000
+T6.TextWrapped = true
+
+-- Scripts:
+
+local function JZIX_fake_script() -- VesticInjection.LocalScript 
+	local script = Instance.new('LocalScript', VesticInjection)
+
+	wait(2)
+	script.Parent.MainFrame.InternalizedFrame.BackgroundTransparency = 0
+	script.Parent.MainFrame.InternalizedFrame:TweenSize(UDim2.new(0,133,0,133), "Out", "Quad", 0.5, true)
+	script.Parent.MainFrame.InternalizedFrame.Vestic1.ImageTransparency = 1
+	script.Parent.MainFrame.InternalizedFrame.Vestic2.ImageTransparency = 1
+	wait(0.02)
+	script.Parent.MainFrame.InternalizedFrame.Vestic1.ImageTransparency = 0.9
+	script.Parent.MainFrame.InternalizedFrame.Vestic2.ImageTransparency = 0.9
+	wait(0.02)
+	script.Parent.MainFrame.InternalizedFrame.Vestic1.ImageTransparency = 0.8
+	script.Parent.MainFrame.InternalizedFrame.Vestic2.ImageTransparency = 0.8
+	wait(0.02)
+	script.Parent.MainFrame.InternalizedFrame.Vestic1.ImageTransparency = 0.7
+	script.Parent.MainFrame.InternalizedFrame.Vestic2.ImageTransparency = 0.7
+	wait(0.02)
+	script.Parent.MainFrame.InternalizedFrame.Vestic1.ImageTransparency = 0.6
+	script.Parent.MainFrame.InternalizedFrame.Vestic2.ImageTransparency = 0.6
+	wait(0.02)
+	script.Parent.MainFrame.InternalizedFrame.Vestic1.ImageTransparency = 0.5
+	script.Parent.MainFrame.InternalizedFrame.Vestic2.ImageTransparency = 0.5
+	wait(0.02)
+	script.Parent.MainFrame.InternalizedFrame.Vestic1.ImageTransparency = 0.4
+	script.Parent.MainFrame.InternalizedFrame.Vestic2.ImageTransparency = 0.4
+	wait(0.02)
+	script.Parent.MainFrame.InternalizedFrame.Vestic1.ImageTransparency = 0.3
+	script.Parent.MainFrame.InternalizedFrame.Vestic2.ImageTransparency = 0.3
+	wait(0.02)
+	script.Parent.MainFrame.InternalizedFrame.Vestic1.ImageTransparency = 0.2
+	script.Parent.MainFrame.InternalizedFrame.Vestic2.ImageTransparency = 0.2
+	wait(0.02)
+	script.Parent.MainFrame.InternalizedFrame.Vestic1.ImageTransparency = 0.1
+	script.Parent.MainFrame.InternalizedFrame.Vestic2.ImageTransparency = 0.1
+	wait(0.02)
+	script.Parent.MainFrame.InternalizedFrame.Vestic1.ImageTransparency = 0
+	script.Parent.MainFrame.InternalizedFrame.Vestic2.ImageTransparency = 0
+	wait(1)
+	script.Parent.MainFrame.InternalizedFrame:TweenSize(UDim2.new(0,324,0,324), "Out", "Quad", 0.5, true)
+	script.Parent.MainFrame.InternalizedFrame.Vestic1.ImageTransparency = 0
+	script.Parent.MainFrame.InternalizedFrame.Vestic2.ImageTransparency = 0
+	wait(0.02)
+	script.Parent.MainFrame.InternalizedFrame.Vestic1.ImageTransparency = 0.1
+	script.Parent.MainFrame.InternalizedFrame.Vestic2.ImageTransparency = 0.1
+	wait(0.02)
+	script.Parent.MainFrame.InternalizedFrame.Vestic1.ImageTransparency = 0.2
+	script.Parent.MainFrame.InternalizedFrame.Vestic2.ImageTransparency = 0.2
+	wait(0.02)
+	script.Parent.MainFrame.InternalizedFrame.Vestic1.ImageTransparency = 0.3
+	script.Parent.MainFrame.InternalizedFrame.Vestic2.ImageTransparency = 0.3
+	wait(0.02)
+	script.Parent.MainFrame.InternalizedFrame.Vestic1.ImageTransparency = 0.4
+	script.Parent.MainFrame.InternalizedFrame.Vestic2.ImageTransparency = 0.4
+	wait(0.02)
+	script.Parent.MainFrame.InternalizedFrame.Vestic1.ImageTransparency = 0.5
+	script.Parent.MainFrame.InternalizedFrame.Vestic2.ImageTransparency = 0.5
+	wait(0.02)
+	script.Parent.MainFrame.InternalizedFrame.Vestic1.ImageTransparency = 0.6
+	script.Parent.MainFrame.InternalizedFrame.Vestic2.ImageTransparency = 0.6
+	wait(0.02)
+	script.Parent.MainFrame.InternalizedFrame.Vestic1.ImageTransparency = 0.7
+	script.Parent.MainFrame.InternalizedFrame.Vestic2.ImageTransparency = 0.7
+	wait(0.02)
+	script.Parent.MainFrame.InternalizedFrame.Vestic1.ImageTransparency = 0.8
+	script.Parent.MainFrame.InternalizedFrame.Vestic2.ImageTransparency = 0.8
+	wait(0.02)
+	script.Parent.MainFrame.InternalizedFrame.Vestic1.ImageTransparency = 0.9
+	script.Parent.MainFrame.InternalizedFrame.Vestic2.ImageTransparency = 0.9
+	wait(0.02)
+	script.Parent.MainFrame.InternalizedFrame.Vestic1.ImageTransparency = 1
+	script.Parent.MainFrame.InternalizedFrame.Vestic2.ImageTransparency = 1
+	wait(0.5)
+	script.Parent.MainFrame.T1:TweenPosition(UDim2.new(0,0,0.371,0), "Out", "Quad", 0.5, true)
+	script.Parent.MainFrame.T2:TweenPosition(UDim2.new(0.167,0,0.371,0), "Out", "Quad", 0.5, true)
+	script.Parent.MainFrame.T3:TweenPosition(UDim2.new(0.334,0,0.371,0), "Out", "Quad", 0.5, true)
+	script.Parent.MainFrame.T4:TweenPosition(UDim2.new(0.501,0,0.371,0), "Out", "Quad", 0.5, true)
+	script.Parent.MainFrame.T5:TweenPosition(UDim2.new(0.668,0,0.371,0), "Out", "Quad", 0.5, true)
+	script.Parent.MainFrame.T6:TweenPosition(UDim2.new(0.834,0,0.371,0), "Out", "Quad", 0.5, true)
+	wait(1)
+	script.Parent.MainFrame.T1:TweenPosition(UDim2.new(0,0,1,0), "Out", "Quad", 0.5, true)
+	script.Parent.MainFrame.T2:TweenPosition(UDim2.new(0.167,0,-1,0), "Out", "Quad", 0.5, true)
+	script.Parent.MainFrame.T3:TweenPosition(UDim2.new(0.334,0,1,0), "Out", "Quad", 0.5, true)
+	script.Parent.MainFrame.T4:TweenPosition(UDim2.new(0.501,0,-1,0), "Out", "Quad", 0.5, true)
+	script.Parent.MainFrame.T5:TweenPosition(UDim2.new(0.668,0,1,0), "Out", "Quad", 0.5, true)
+	script.Parent.MainFrame.T6:TweenPosition(UDim2.new(0.834,0,-1,0), "Out", "Quad", 0.5, true)
+	wait(1)
+	script.Parent.MainFrame.InternalizedFrame:TweenSize(UDim2.new(0,133,0,133), "Out", "Quad", 0.5, true)
+	script.Parent.MainFrame.InternalizedFrame.Vestic1.ImageTransparency = 1
+	script.Parent.MainFrame.InternalizedFrame.Vestic2.ImageTransparency = 1
+	wait(0.02)
+	script.Parent.MainFrame.InternalizedFrame.Vestic1.ImageTransparency = 0.9
+	script.Parent.MainFrame.InternalizedFrame.Vestic2.ImageTransparency = 0.9
+	wait(0.02)
+	script.Parent.MainFrame.InternalizedFrame.Vestic1.ImageTransparency = 0.8
+	script.Parent.MainFrame.InternalizedFrame.Vestic2.ImageTransparency = 0.8
+	wait(0.02)
+	script.Parent.MainFrame.InternalizedFrame.Vestic1.ImageTransparency = 0.7
+	script.Parent.MainFrame.InternalizedFrame.Vestic2.ImageTransparency = 0.7
+	wait(0.02)
+	script.Parent.MainFrame.InternalizedFrame.Vestic1.ImageTransparency = 0.6
+	script.Parent.MainFrame.InternalizedFrame.Vestic2.ImageTransparency = 0.6
+	wait(0.02)
+	script.Parent.MainFrame.InternalizedFrame.Vestic1.ImageTransparency = 0.5
+	script.Parent.MainFrame.InternalizedFrame.Vestic2.ImageTransparency = 0.5
+	wait(0.02)
+	script.Parent.MainFrame.InternalizedFrame.Vestic1.ImageTransparency = 0.4
+	script.Parent.MainFrame.InternalizedFrame.Vestic2.ImageTransparency = 0.4
+	wait(0.02)
+	script.Parent.MainFrame.InternalizedFrame.Vestic1.ImageTransparency = 0.3
+	script.Parent.MainFrame.InternalizedFrame.Vestic2.ImageTransparency = 0.3
+	wait(0.02)
+	script.Parent.MainFrame.InternalizedFrame.Vestic1.ImageTransparency = 0.2
+	script.Parent.MainFrame.InternalizedFrame.Vestic2.ImageTransparency = 0.2
+	wait(0.02)
+	script.Parent.MainFrame.InternalizedFrame.Vestic1.ImageTransparency = 0.1
+	script.Parent.MainFrame.InternalizedFrame.Vestic2.ImageTransparency = 0.1
+	wait(0.02)
+	script.Parent.MainFrame.InternalizedFrame.Vestic1.ImageTransparency = 0
+	script.Parent.MainFrame.InternalizedFrame.Vestic2.ImageTransparency = 0
+	wait(1)
+	script.Parent.MainFrame.InternalizedFrame:TweenSize(UDim2.new(0,0,0,0), "Out", "Quad", 0.5, true)
+	script.Parent.MainFrame.InternalizedFrame.Vestic1.ImageTransparency = 0
+	script.Parent.MainFrame.InternalizedFrame.Vestic2.ImageTransparency = 0
+	wait(0.02)
+	script.Parent.MainFrame.InternalizedFrame.Vestic1.ImageTransparency = 0.1
+	script.Parent.MainFrame.InternalizedFrame.Vestic2.ImageTransparency = 0.1
+	wait(0.02)
+	script.Parent.MainFrame.InternalizedFrame.Vestic1.ImageTransparency = 0.2
+	script.Parent.MainFrame.InternalizedFrame.Vestic2.ImageTransparency = 0.2
+	wait(0.02)
+	script.Parent.MainFrame.InternalizedFrame.Vestic1.ImageTransparency = 0.3
+	script.Parent.MainFrame.InternalizedFrame.Vestic2.ImageTransparency = 0.3
+	wait(0.02)
+	script.Parent.MainFrame.InternalizedFrame.Vestic1.ImageTransparency = 0.4
+	script.Parent.MainFrame.InternalizedFrame.Vestic2.ImageTransparency = 0.4
+	wait(0.02)
+	script.Parent.MainFrame.InternalizedFrame.Vestic1.ImageTransparency = 0.5
+	script.Parent.MainFrame.InternalizedFrame.Vestic2.ImageTransparency = 0.5
+	wait(0.02)
+	script.Parent.MainFrame.InternalizedFrame.Vestic1.ImageTransparency = 0.6
+	script.Parent.MainFrame.InternalizedFrame.Vestic2.ImageTransparency = 0.6
+	wait(0.02)
+	script.Parent.MainFrame.InternalizedFrame.Vestic1.ImageTransparency = 0.7
+	script.Parent.MainFrame.InternalizedFrame.Vestic2.ImageTransparency = 0.7
+	wait(0.02)
+	script.Parent.MainFrame.InternalizedFrame.Vestic1.ImageTransparency = 0.8
+	script.Parent.MainFrame.InternalizedFrame.Vestic2.ImageTransparency = 0.8
+	wait(0.02)
+	script.Parent.MainFrame.InternalizedFrame.Vestic1.ImageTransparency = 0.9
+	script.Parent.MainFrame.InternalizedFrame.Vestic2.ImageTransparency = 0.9
+	wait(0.02)
+	script.Parent.MainFrame.InternalizedFrame.Vestic1.ImageTransparency = 1
+	script.Parent.MainFrame.InternalizedFrame.Vestic2.ImageTransparency = 1
+	wait(0.5)
+	script.Parent.MainFrame.InternalizedFrame.BackgroundTransparency = 1
+end
+coroutine.wrap(JZIX_fake_script)()
