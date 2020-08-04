@@ -6,9 +6,9 @@
  | |  | | |  | |/ /_   / ____ \ (_| | | | | | | | | | | | |  | (_| | | | |  __/ |
  |_|  |_|_|  |_|____| /_/    \_\__,_|_| |_| |_|_|_| |_| |_|   \__,_|_| |_|\___|_|
 
-MM2 Admin Panel is a fork of the popular Vynixu's MM2 script, MM2 Admin Panel brings
-a more compact, smaller design, inspired by Owl Hub, and Axon based DLL Compatibility,
-meaning exploits like Skisploit and Acrylix are able to handle MM2 Admin Panel.
+MM2 Admin Panel is a fork of the popular Vynixu's MM2 script, and Generic MM2 Script,
+MM2 Admin Panel brings a more compact, smaller design, inspired by Owl Hub, and Axon
+based DLL Compatibility, meaning exploits like Skisploit and Acrylix are able to handle MM2 Admin Panel.
 
 ]]--
 
@@ -812,7 +812,7 @@ MinimizeButton.Text = "-"
 MinimizeButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 MinimizeButton.TextSize = 25.000
 
-local function BKBUL_fake_script() -- MainFrame.DraggingScript 
+local function CAAR_fake_script() -- MainFrame.DraggingScript 
 	local script = Instance.new('LocalScript', MainFrame)
 
 	local UserInputService = game:GetService("UserInputService")
@@ -855,8 +855,8 @@ local function BKBUL_fake_script() -- MainFrame.DraggingScript
 		end
 	end)
 end
-coroutine.wrap(BKBUL_fake_script)()
-local function RFKUY_fake_script() -- MainFrame.TweenIntro 
+coroutine.wrap(CAAR_fake_script)()
+local function YXJBI_fake_script() -- MainFrame.TweenIntro 
 	local script = Instance.new('LocalScript', MainFrame)
 
 	wait(1)
@@ -869,8 +869,8 @@ local function RFKUY_fake_script() -- MainFrame.TweenIntro
 	wait(0.5)
 	script.Parent.StartFrame.Visible = false
 end
-coroutine.wrap(RFKUY_fake_script)()
-local function UXVOAGG_fake_script() -- Activation.Script 
+coroutine.wrap(YXJBI_fake_script)()
+local function TMPXF_fake_script() -- Activation.Script 
 	local script = Instance.new('Script', Activation)
 
 		flying = false
@@ -1037,8 +1037,8 @@ local function UXVOAGG_fake_script() -- Activation.Script
 			end
 		end)
 end
-coroutine.wrap(UXVOAGG_fake_script)()
-local function FCZS_fake_script() -- Activation_2.Script 
+coroutine.wrap(TMPXF_fake_script)()
+local function YUJE_fake_script() -- Activation_2.Script 
 	local script = Instance.new('Script', Activation_2)
 
 		noclip = false
@@ -1072,16 +1072,16 @@ local function FCZS_fake_script() -- Activation_2.Script
 			end	
 		end)
 end
-coroutine.wrap(FCZS_fake_script)()
-local function RCJMKB_fake_script() -- SetActivation.Script 
+coroutine.wrap(YUJE_fake_script)()
+local function PZLNSHL_fake_script() -- SetActivation.Script 
 	local script = Instance.new('Script', SetActivation)
 
 		script.Parent.MouseButton1Down:connect(function()	
 			game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = script.Parent.Parent.WalkspeedTB.Text	
 		end)
 end
-coroutine.wrap(RCJMKB_fake_script)()
-local function MSRAUD_fake_script() -- ResetActivation.Script 
+coroutine.wrap(PZLNSHL_fake_script)()
+local function GEIYPRT_fake_script() -- ResetActivation.Script 
 	local script = Instance.new('Script', ResetActivation)
 
 		script.Parent.MouseButton1Down:connect(function()	
@@ -1089,16 +1089,16 @@ local function MSRAUD_fake_script() -- ResetActivation.Script
 		script.Parent.Parent.WalkspeedTB.Text = ""
 		end)
 end
-coroutine.wrap(MSRAUD_fake_script)()
-local function AQVBAT_fake_script() -- SetActivation_2.Script 
+coroutine.wrap(GEIYPRT_fake_script)()
+local function TFRR_fake_script() -- SetActivation_2.Script 
 	local script = Instance.new('Script', SetActivation_2)
 
 		script.Parent.MouseButton1Down:connect(function()	
 			game.Players.LocalPlayer.Character.Humanoid.JumpPower = script.Parent.Parent.JumpPowerTB.Text	
 		end)
 end
-coroutine.wrap(AQVBAT_fake_script)()
-local function GDVVLFQ_fake_script() -- ResetActivation_2.Script 
+coroutine.wrap(TFRR_fake_script)()
+local function JADULFN_fake_script() -- ResetActivation_2.Script 
 	local script = Instance.new('Script', ResetActivation_2)
 
 		script.Parent.MouseButton1Down:connect(function()	
@@ -1106,8 +1106,8 @@ local function GDVVLFQ_fake_script() -- ResetActivation_2.Script
 		script.Parent.Parent.JumpPowerTB.Text = ""
 		end)
 end
-coroutine.wrap(GDVVLFQ_fake_script)()
-local function KBGL_fake_script() -- Activation_3.Script 
+coroutine.wrap(JADULFN_fake_script)()
+local function PAGS_fake_script() -- Activation_3.Script 
 	local script = Instance.new('Script', Activation_3)
 
 		local toggle = false
@@ -1147,8 +1147,8 @@ local function KBGL_fake_script() -- Activation_3.Script
 			
 		end)
 end
-coroutine.wrap(KBGL_fake_script)()
-local function PBGQNY_fake_script() -- Activation_4.Script 
+coroutine.wrap(PAGS_fake_script)()
+local function JOVJD_fake_script() -- Activation_4.Script 
 	local script = Instance.new('Script', Activation_4)
 
 	local obj = game.workspace
@@ -1183,16 +1183,16 @@ local function PBGQNY_fake_script() -- Activation_4.Script
 		end
 	end)
 end
-coroutine.wrap(PBGQNY_fake_script)()
-local function DGJQL_fake_script() -- Activation_5.Script 
+coroutine.wrap(JOVJD_fake_script)()
+local function YCLD_fake_script() -- Activation_5.Script 
 	local script = Instance.new('Script', Activation_5)
 
 	script.Parent.MouseButton1Down:Connect(function()
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/MarsQQ/ScriptHubScripts/master/MM2Autofarm"))();
 	end)
 end
-coroutine.wrap(DGJQL_fake_script)()
-local function XENP_fake_script() -- Activation_6.Script 
+coroutine.wrap(YCLD_fake_script)()
+local function DYJQXFE_fake_script() -- Activation_6.Script 
 	local script = Instance.new('Script', Activation_6)
 
 	script.Parent.MouseButton1Click:Connect(function(input)
@@ -1224,8 +1224,8 @@ local function XENP_fake_script() -- Activation_6.Script
 		
 		end)
 end
-coroutine.wrap(XENP_fake_script)()
-local function BBMV_fake_script() -- Activation_7.Script 
+coroutine.wrap(DYJQXFE_fake_script)()
+local function PDNI_fake_script() -- Activation_7.Script 
 	local script = Instance.new('Script', Activation_7)
 
 		script.Parent.MouseButton1Click:Connect(function()
@@ -1252,8 +1252,8 @@ local function BBMV_fake_script() -- Activation_7.Script
 			end	
 		end)
 end
-coroutine.wrap(BBMV_fake_script)()
-local function NDNK_fake_script() -- Activation_8.Script 
+coroutine.wrap(PDNI_fake_script)()
+local function LLCYWPS_fake_script() -- Activation_8.Script 
 	local script = Instance.new('Script', Activation_8)
 
 	local toggle = false
@@ -1320,8 +1320,8 @@ local function NDNK_fake_script() -- Activation_8.Script
 			end
 		end)
 end
-coroutine.wrap(NDNK_fake_script)()
-local function VVTHK_fake_script() -- Activation_9.Script 
+coroutine.wrap(LLCYWPS_fake_script)()
+local function HUBBZ_fake_script() -- Activation_9.Script 
 	local script = Instance.new('Script', Activation_9)
 
 	local toggle = false
@@ -1388,8 +1388,8 @@ local function VVTHK_fake_script() -- Activation_9.Script
 			end
 		end)
 end
-coroutine.wrap(VVTHK_fake_script)()
-local function AJWMIZ_fake_script() -- Activation_10.Script 
+coroutine.wrap(HUBBZ_fake_script)()
+local function DSEB_fake_script() -- Activation_10.Script 
 	local script = Instance.new('Script', Activation_10)
 
 		script.Parent.MouseButton1Click:Connect(function()
@@ -1398,8 +1398,8 @@ local function AJWMIZ_fake_script() -- Activation_10.Script
 			
 		end)
 end
-coroutine.wrap(AJWMIZ_fake_script)()
-local function PDFWNOI_fake_script() -- Activation_11.Script 
+coroutine.wrap(DSEB_fake_script)()
+local function SPIZ_fake_script() -- Activation_11.Script 
 	local script = Instance.new('Script', Activation_11)
 
 		script.Parent.MouseButton1Click:Connect(function()	
@@ -1418,8 +1418,8 @@ local function PDFWNOI_fake_script() -- Activation_11.Script
 			end
 		end)
 end
-coroutine.wrap(PDFWNOI_fake_script)()
-local function NBCKAC_fake_script() -- TeleportButton.LocalScript 
+coroutine.wrap(SPIZ_fake_script)()
+local function BPZKT_fake_script() -- TeleportButton.LocalScript 
 	local script = Instance.new('LocalScript', TeleportButton)
 
 		script.Parent.MouseButton1Click:Connect(function()	
@@ -1429,8 +1429,8 @@ local function NBCKAC_fake_script() -- TeleportButton.LocalScript
 		
 		end)
 end
-coroutine.wrap(NBCKAC_fake_script)()
-local function HPHFBO_fake_script() -- Activation_12.Script 
+coroutine.wrap(BPZKT_fake_script)()
+local function QVYZ_fake_script() -- Activation_12.Script 
 	local script = Instance.new('Script', Activation_12)
 
 		script.Parent.MouseButton1Click:Connect(function()	
@@ -1449,8 +1449,8 @@ local function HPHFBO_fake_script() -- Activation_12.Script
 			end
 		end)
 end
-coroutine.wrap(HPHFBO_fake_script)()
-local function SXQD_fake_script() -- Activation_13.Script 
+coroutine.wrap(QVYZ_fake_script)()
+local function QWPF_fake_script() -- Activation_13.Script 
 	local script = Instance.new('Script', Activation_13)
 
 		script.Parent.MouseButton1Click:Connect(function()	
@@ -1469,8 +1469,8 @@ local function SXQD_fake_script() -- Activation_13.Script
 			end
 		end)
 end
-coroutine.wrap(SXQD_fake_script)()
-local function GYSKU_fake_script() -- BottomFrame.LocalScript 
+coroutine.wrap(QWPF_fake_script)()
+local function EFZQAGI_fake_script() -- BottomFrame.LocalScript 
 	local script = Instance.new('LocalScript', BottomFrame)
 
 	script.Parent.Tab1.MouseButton1Click:Connect(function()
@@ -1514,8 +1514,8 @@ local function GYSKU_fake_script() -- BottomFrame.LocalScript
 		script.Parent.Tab4.BackgroundColor3 = Color3.fromRGB(30,30,30)
 	end)
 end
-coroutine.wrap(GYSKU_fake_script)()
-local function VVRP_fake_script() -- MinimizeButton.LocalScript 
+coroutine.wrap(EFZQAGI_fake_script)()
+local function MNNW_fake_script() -- MinimizeButton.LocalScript 
 	local script = Instance.new('LocalScript', MinimizeButton)
 
 	local minimize = false
@@ -1531,4 +1531,4 @@ local function VVRP_fake_script() -- MinimizeButton.LocalScript
 	end)
 	
 end
-coroutine.wrap(VVRP_fake_script)()
+coroutine.wrap(MNNW_fake_script)()
