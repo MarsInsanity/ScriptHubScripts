@@ -6,11 +6,12 @@
  | |  | | |  | |/ /_   / ____ \ (_| | | | | | | | | | | | |  | (_| | | | |  __/ |
  |_|  |_|_|  |_|____| /_/    \_\__,_|_| |_| |_|_|_| |_| |_|   \__,_|_| |_|\___|_|
 
-MM2 Admin Panel is a fork of the popular Vynixu's MM2 script, and Generic MM2 Script,
-MM2 Admin Panel brings a more compact, smaller design, inspired by Owl Hub, and Axon
-based DLL Compatibility, meaning exploits like Skisploit and Acrylix are able to handle MM2 Admin Panel.
+MM2 Admin Panel is a fork of the popular Vynixu's MM2 script, and Generic MM2 Script.
+MM2 Admin Panel brings a more compact, smaller design, inspired by Owl Hub,
+MM2 Admin Script brings Axon based DLL Compatibility, meaning exploits like
+Skisploit and Acrylix are able to utilize MM2 Admin Panel without any issues.
 
-Thank you to my friend Zyrex for helping me with Kill Murderer
+Thank you to my friends Zyrex and Vegie for helping me with Kill Murderer
 ]]--
 
 local MM2AdminPanel = Instance.new("ScreenGui")
@@ -887,7 +888,7 @@ MinimizeButton.Text = "-"
 MinimizeButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 MinimizeButton.TextSize = 25.000
 
-local function OQDKRWV_fake_script() -- MainFrame.DraggingScript 
+local function YEYWY_fake_script() -- MainFrame.DraggingScript 
 	local script = Instance.new('LocalScript', MainFrame)
 
 	local UserInputService = game:GetService("UserInputService")
@@ -930,8 +931,8 @@ local function OQDKRWV_fake_script() -- MainFrame.DraggingScript
 		end
 	end)
 end
-coroutine.wrap(OQDKRWV_fake_script)()
-local function UAFEA_fake_script() -- MainFrame.TweenIntro 
+coroutine.wrap(YEYWY_fake_script)()
+local function ZAJQQS_fake_script() -- MainFrame.TweenIntro 
 	local script = Instance.new('LocalScript', MainFrame)
 
 	wait(1)
@@ -944,8 +945,8 @@ local function UAFEA_fake_script() -- MainFrame.TweenIntro
 	wait(0.5)
 	script.Parent.StartFrame.Visible = false
 end
-coroutine.wrap(UAFEA_fake_script)()
-local function DRVDBLR_fake_script() -- Activation.Script 
+coroutine.wrap(ZAJQQS_fake_script)()
+local function REDNKR_fake_script() -- Activation.Script 
 	local script = Instance.new('Script', Activation)
 
 		flying = false
@@ -1112,8 +1113,8 @@ local function DRVDBLR_fake_script() -- Activation.Script
 			end
 		end)
 end
-coroutine.wrap(DRVDBLR_fake_script)()
-local function SOMHM_fake_script() -- Activation_2.Script 
+coroutine.wrap(REDNKR_fake_script)()
+local function TJSAIPF_fake_script() -- Activation_2.Script 
 	local script = Instance.new('Script', Activation_2)
 
 		noclip = false
@@ -1147,16 +1148,16 @@ local function SOMHM_fake_script() -- Activation_2.Script
 			end	
 		end)
 end
-coroutine.wrap(SOMHM_fake_script)()
-local function RVUAVY_fake_script() -- SetActivation.Script 
+coroutine.wrap(TJSAIPF_fake_script)()
+local function CQPC_fake_script() -- SetActivation.Script 
 	local script = Instance.new('Script', SetActivation)
 
 		script.Parent.MouseButton1Down:connect(function()	
 			game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = script.Parent.Parent.WalkspeedTB.Text	
 		end)
 end
-coroutine.wrap(RVUAVY_fake_script)()
-local function PVVD_fake_script() -- ResetActivation.Script 
+coroutine.wrap(CQPC_fake_script)()
+local function FBVC_fake_script() -- ResetActivation.Script 
 	local script = Instance.new('Script', ResetActivation)
 
 		script.Parent.MouseButton1Down:connect(function()	
@@ -1164,16 +1165,16 @@ local function PVVD_fake_script() -- ResetActivation.Script
 		script.Parent.Parent.WalkspeedTB.Text = ""
 		end)
 end
-coroutine.wrap(PVVD_fake_script)()
-local function CZEUCIL_fake_script() -- SetActivation_2.Script 
+coroutine.wrap(FBVC_fake_script)()
+local function IAXZ_fake_script() -- SetActivation_2.Script 
 	local script = Instance.new('Script', SetActivation_2)
 
 		script.Parent.MouseButton1Down:connect(function()	
 			game.Players.LocalPlayer.Character.Humanoid.JumpPower = script.Parent.Parent.JumpPowerTB.Text	
 		end)
 end
-coroutine.wrap(CZEUCIL_fake_script)()
-local function CCQSNAJ_fake_script() -- ResetActivation_2.Script 
+coroutine.wrap(IAXZ_fake_script)()
+local function SWVMEQ_fake_script() -- ResetActivation_2.Script 
 	local script = Instance.new('Script', ResetActivation_2)
 
 		script.Parent.MouseButton1Down:connect(function()	
@@ -1181,8 +1182,8 @@ local function CCQSNAJ_fake_script() -- ResetActivation_2.Script
 		script.Parent.Parent.JumpPowerTB.Text = ""
 		end)
 end
-coroutine.wrap(CCQSNAJ_fake_script)()
-local function UHDOSR_fake_script() -- Activation_3.Script 
+coroutine.wrap(SWVMEQ_fake_script)()
+local function UBERA_fake_script() -- Activation_3.Script 
 	local script = Instance.new('Script', Activation_3)
 
 		local toggle = false
@@ -1222,8 +1223,8 @@ local function UHDOSR_fake_script() -- Activation_3.Script
 			
 		end)
 end
-coroutine.wrap(UHDOSR_fake_script)()
-local function KQYMP_fake_script() -- Activation_4.Script 
+coroutine.wrap(UBERA_fake_script)()
+local function HJKXMXP_fake_script() -- Activation_4.Script 
 	local script = Instance.new('Script', Activation_4)
 
 	local obj = game.workspace
@@ -1258,18 +1259,19 @@ local function KQYMP_fake_script() -- Activation_4.Script
 		end
 	end)
 end
-coroutine.wrap(KQYMP_fake_script)()
-local function MQGTT_fake_script() -- Activation_5.Script 
+coroutine.wrap(HJKXMXP_fake_script)()
+local function MZWFY_fake_script() -- Activation_5.Script 
 	local script = Instance.new('Script', Activation_5)
 
 	script.Parent.MouseButton1Down:Connect(function()
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/MarsQQ/ScriptHubScripts/master/MM2Autofarm"))();
 	end)
 end
-coroutine.wrap(MQGTT_fake_script)()
-local function XOIFJH_fake_script() -- Activation_6.Script 
+coroutine.wrap(MZWFY_fake_script)()
+local function DMLTSFL_fake_script() -- Activation_6.Script 
 	local script = Instance.new('Script', Activation_6)
 
+	
 	local function GetMurderer()
 	    local plrs = game:GetService("Players")
 	    for i,v in pairs(plrs:GetPlayers()) do
@@ -1280,18 +1282,20 @@ local function XOIFJH_fake_script() -- Activation_6.Script
 	end
 	script.Parent.MouseButton1Click:Connect(function()
 	local Murderer = GetMurderer() --// Gets the userdata of the murderer
-	
+		local pos = Murderer.Character.HumanoidRootPart.Position
 	repeat
 	    if Murderer ~= nil then --// Checking if there actually is a murderer
-	        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Murderer.Character.HumanoidRootPart.CFrame * CFrame.new(0, 0, 5)
-	    end
+				game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Murderer.Character.HumanoidRootPart.CFrame * CFrame.new(0, 0, 5)
+				workspace.CurrentCamera.CFrame = Murderer.Character.HumanoidRootPart.CFrame
+				
+			end
 	    wait()
 		until Murderer.Character.Humanoid.Health == 0
 		end)
 	
 end
-coroutine.wrap(XOIFJH_fake_script)()
-local function EPQWSTA_fake_script() -- Activation_7.Script 
+coroutine.wrap(DMLTSFL_fake_script)()
+local function BHPHGG_fake_script() -- Activation_7.Script 
 	local script = Instance.new('Script', Activation_7)
 
 		script.Parent.MouseButton1Click:Connect(function()
@@ -1318,8 +1322,8 @@ local function EPQWSTA_fake_script() -- Activation_7.Script
 			end	
 		end)
 end
-coroutine.wrap(EPQWSTA_fake_script)()
-local function HAJNFD_fake_script() -- Activation_8.Script 
+coroutine.wrap(BHPHGG_fake_script)()
+local function KYJRI_fake_script() -- Activation_8.Script 
 	local script = Instance.new('Script', Activation_8)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -1335,16 +1339,16 @@ local function HAJNFD_fake_script() -- Activation_8.Script
 			end
 		end)
 end
-coroutine.wrap(HAJNFD_fake_script)()
-local function MZYUSRD_fake_script() -- Activation_9.Script 
+coroutine.wrap(KYJRI_fake_script)()
+local function PYYXHVN_fake_script() -- Activation_9.Script 
 	local script = Instance.new('Script', Activation_9)
 
 	script.Parent.MouseButton1Down:Connect(function()
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/MarsQQ/ScriptHubScripts/master/FPS%20Boost"))();
 	end)
 end
-coroutine.wrap(MZYUSRD_fake_script)()
-local function VLVOQFX_fake_script() -- Activation_10.Script 
+coroutine.wrap(PYYXHVN_fake_script)()
+local function QMYQR_fake_script() -- Activation_10.Script 
 	local script = Instance.new('Script', Activation_10)
 
 	local toggle = false
@@ -1411,8 +1415,8 @@ local function VLVOQFX_fake_script() -- Activation_10.Script
 			end
 		end)
 end
-coroutine.wrap(VLVOQFX_fake_script)()
-local function ZHYWBL_fake_script() -- Activation_11.Script 
+coroutine.wrap(QMYQR_fake_script)()
+local function DAHC_fake_script() -- Activation_11.Script 
 	local script = Instance.new('Script', Activation_11)
 
 	local toggle = false
@@ -1479,8 +1483,8 @@ local function ZHYWBL_fake_script() -- Activation_11.Script
 			end
 		end)
 end
-coroutine.wrap(ZHYWBL_fake_script)()
-local function PDEHV_fake_script() -- Activation_12.Script 
+coroutine.wrap(DAHC_fake_script)()
+local function RFSADEM_fake_script() -- Activation_12.Script 
 	local script = Instance.new('Script', Activation_12)
 
 		script.Parent.MouseButton1Click:Connect(function()
@@ -1489,8 +1493,8 @@ local function PDEHV_fake_script() -- Activation_12.Script
 			
 		end)
 end
-coroutine.wrap(PDEHV_fake_script)()
-local function XZHU_fake_script() -- Activation_13.Script 
+coroutine.wrap(RFSADEM_fake_script)()
+local function UAHNI_fake_script() -- Activation_13.Script 
 	local script = Instance.new('Script', Activation_13)
 
 		script.Parent.MouseButton1Click:Connect(function()	
@@ -1509,8 +1513,21 @@ local function XZHU_fake_script() -- Activation_13.Script
 			end
 		end)
 end
-coroutine.wrap(XZHU_fake_script)()
-local function ZTPI_fake_script() -- TeleportButton.LocalScript 
+coroutine.wrap(UAHNI_fake_script)()
+local function SFWDOIS_fake_script() -- TeleportTB.LocalScript 
+	local script = Instance.new('LocalScript', TeleportTB)
+
+	script.Parent.FocusLost:connect(function()
+		for i,v in pairs(game.Players:GetChildren()) do
+			if (string.sub(string.lower(v.Name),1,string.len(script.Parent.Text))) == string.lower(script.Parent.Text) then
+				script.Parent.Text = v.Name
+			end
+		end
+	end)
+	
+end
+coroutine.wrap(SFWDOIS_fake_script)()
+local function PCXSPFD_fake_script() -- TeleportButton.LocalScript 
 	local script = Instance.new('LocalScript', TeleportButton)
 
 		script.Parent.MouseButton1Click:Connect(function()	
@@ -1520,8 +1537,8 @@ local function ZTPI_fake_script() -- TeleportButton.LocalScript
 		
 		end)
 end
-coroutine.wrap(ZTPI_fake_script)()
-local function ZHFN_fake_script() -- Activation_14.Script 
+coroutine.wrap(PCXSPFD_fake_script)()
+local function VHQQ_fake_script() -- Activation_14.Script 
 	local script = Instance.new('Script', Activation_14)
 
 		script.Parent.MouseButton1Click:Connect(function()	
@@ -1540,8 +1557,8 @@ local function ZHFN_fake_script() -- Activation_14.Script
 			end
 		end)
 end
-coroutine.wrap(ZHFN_fake_script)()
-local function EPCJ_fake_script() -- Activation_15.Script 
+coroutine.wrap(VHQQ_fake_script)()
+local function TDFTQMD_fake_script() -- Activation_15.Script 
 	local script = Instance.new('Script', Activation_15)
 
 		script.Parent.MouseButton1Click:Connect(function()	
@@ -1560,8 +1577,8 @@ local function EPCJ_fake_script() -- Activation_15.Script
 			end
 		end)
 end
-coroutine.wrap(EPCJ_fake_script)()
-local function QNARE_fake_script() -- BottomFrame.LocalScript 
+coroutine.wrap(TDFTQMD_fake_script)()
+local function MPCVNC_fake_script() -- BottomFrame.LocalScript 
 	local script = Instance.new('LocalScript', BottomFrame)
 
 	script.Parent.Tab1.MouseButton1Click:Connect(function()
@@ -1605,8 +1622,8 @@ local function QNARE_fake_script() -- BottomFrame.LocalScript
 		script.Parent.Tab4.BackgroundColor3 = Color3.fromRGB(30,30,30)
 	end)
 end
-coroutine.wrap(QNARE_fake_script)()
-local function YBRD_fake_script() -- MinimizeButton.LocalScript 
+coroutine.wrap(MPCVNC_fake_script)()
+local function XLIDXAA_fake_script() -- MinimizeButton.LocalScript 
 	local script = Instance.new('LocalScript', MinimizeButton)
 
 	local minimize = false
@@ -1622,4 +1639,4 @@ local function YBRD_fake_script() -- MinimizeButton.LocalScript
 	end)
 	
 end
-coroutine.wrap(YBRD_fake_script)()
+coroutine.wrap(XLIDXAA_fake_script)()
