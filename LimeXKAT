@@ -6,7 +6,7 @@ _G.SliderColor = Color3.fromRGB(0,0,255)
 
 local library = loadstring(game:HttpGet(('https://pastebin.com/raw/FsJak6AT')))() -- It's obfuscated, I won't let you see my ugly coding skills. =)
 
-local w = library:CreateWindow("Lime x - Kat")
+local w = library:CreateWindow("Lime X - Kat")
 
 local b = w:CreateFolder("Features")
 
@@ -15,11 +15,13 @@ b:Label("Aimbot",Color3.fromRGB(38,38,38),Color3.fromRGB(0,216,111)) --BgColor,T
 
 
 
-b:Button("Unnamed esp",function(bool)
-		loadstring(game:HttpGet("https://pastebin.com/raw/uVH1Z6Pa", true))()
+b:Button("UnNamed ESP",function(bool)
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/MicrosoftThawne/UnNamed-Esp/master/unnamed/unnamed.lua", true))()
 game:GetService("StarterGui"):SetCore("SendNotification", {
-	Title = "Lime X !";
+	Title = "Lime X";
 	Text = "Press Show team for it to work. You can press F4 to close the esp ui.. ";
+	Duration = 4;
+	Button1 = "OK"
 })
 end)
 
@@ -27,8 +29,10 @@ b:Button("Aimbot",function()
 loadstring(game:HttpGet("https://pastebin.com/raw/dcA53W72", true))()
 wait(0.3)
 game:GetService("StarterGui"):SetCore("SendNotification", {
-	Title = "Lime X !";
+	Title = "Lime X";
 	Text = "Press Ctrl To Toggle Aimlock on and off. ";
+	Duration = 4;
+	Button1 = "OK"
 })
 end)
 
@@ -51,6 +55,8 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/yesok3877/Celestial-S
 game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Lime X !";
 	Text = "Lag has been fixed. This silent aim is mostly used to show that your cheating. ";
+	Duration = 4;
+	Button1 = "OK"
 })
 end)
 
@@ -63,7 +69,7 @@ end)
 b:Label("Misc",Color3.fromRGB(38,38,38),Color3.fromRGB(0,216,111)) --BgColor,TextColor
 
 
-b:Button("Less Lag",function()
+b:Button("FPS Booster",function()
 loadstring(game:HttpGet("https://pastebin.com/raw/gX9mR85X", true))()
 end)
 
