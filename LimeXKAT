@@ -1,98 +1,95 @@
-if game.PlaceId == 621129760 then 
+local Material = loadstring(game:HttpGet("https://raw.githubusercontent.com/Kinlei/MaterialLua/master/Module.lua"))()
 
-_G.ToggleColor = Color3.fromRGB(255,0,0)
-_G.ButtonColor = Color3.fromRGB(0,255,0)
-_G.SliderColor = Color3.fromRGB(0,0,255)
+local UI = Material.Load({
+	Title = "KAT!",
+	Style = 1,
+	SizeX = 300,
+	SizeY = 300,
+	Theme = "Dark"
+})
 
-local library = loadstring(game:HttpGet(('https://pastebin.com/raw/FsJak6AT')))() -- It's obfuscated, I won't let you see my ugly coding skills. =)
+local Main = UI.New({
+	Title = "Main"
+})
 
-local w = library:CreateWindow("Lime X - Kat")
+Main.Button({
+	Text = "Aimbot",
+	Callback = function()
+		loadstring(game:HttpGet("https://pastebin.com/raw/dcA53W72", true))()
+	end,
+	Menu = {
+		Information = function(self)
+			UI.Banner({
+				Text = "Hold Left CTRL to Lock your camera on someone."            
+			})
+		end
+		}
+})
 
-local b = w:CreateFolder("Features")
-
-b:Label("Aimbot",Color3.fromRGB(38,38,38),Color3.fromRGB(0,216,111)) --BgColor,TextColor
-
-
-
-
-b:Button("UnNamed ESP",function(bool)
+Main.Button({
+	Text = "UnNamed ESP",
+	Callback = function()
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/MicrosoftThawne/UnNamed-Esp/master/unnamed/unnamed.lua", true))()
-game:GetService("StarterGui"):SetCore("SendNotification", {
-	Title = "Lime X";
-	Text = "Press Show team for it to work. You can press F4 to close the esp ui.. ";
-	Duration = 4;
-	Button1 = "OK"
+	end,
+	Menu = {
+		Information = function(self)
+			UI.Banner({
+				Text = "Press Show Team for it to work. You can press F4 to close the ESP UI."            
+			})
+		end
+	}
 })
-end)
 
-b:Button("Aimbot",function()
-loadstring(game:HttpGet("https://pastebin.com/raw/dcA53W72", true))()
-wait(0.3)
-game:GetService("StarterGui"):SetCore("SendNotification", {
-	Title = "Lime X";
-	Text = "Press Ctrl To Toggle Aimlock on and off. ";
-	Duration = 4;
-	Button1 = "OK"
+Main.Toggle({
+	Text = "Silent Aim",
+	Callback = function(value)
+		local refreshrate = 0.01
+		_G.toggled = value
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/venosu/kat/main/head.lua", true))()
+	end,
+	Enabled = false
 })
-end)
 
-
-b:Button("Silent Aim",function()
-local refreshrate = 0.01
- _G.toggled = true
-loadstring(game:HttpGet("https://raw.githubusercontent.com/venosu/kat/main/head.lua", true))()
-end)
-
-
-b:Button("Stronger Silent Aim",function()
-getgenv().SelectedPart = "Head"
-getgenv().VisibiltyCheck = false
-getgenv().TargetESP = false
-getgenv().FOV = 250
-getgenv().CircleVisibility = true
-getgenv().Distance = 500
-loadstring(game:HttpGet("https://raw.githubusercontent.com/yesok3877/Celestial-Silent-Aim/master/Auto-Input", true))()
-game:GetService("StarterGui"):SetCore("SendNotification", {
-	Title = "Lime X !";
-	Text = "Lag has been fixed. This silent aim is mostly used to show that your cheating. ";
-	Duration = 4;
-	Button1 = "OK"
+Main.Button({
+	Text = "Stronger Silent Aim",
+	Callback = function()
+		getgenv().SelectedPart = "Head"
+		getgenv().VisibiltyCheck = false
+		getgenv().TargetESP = false
+		getgenv().FOV = 250
+		getgenv().CircleVisibility = true
+		getgenv().Distance = 500
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/yesok3877/Celestial-Silent-Aim/master/Auto-Input", true))()
+	end,
+	Menu = {
+		Information = function(self)
+			UI.Banner({
+				Text = "Lag has been fixed. This silent aim is mostly used to show that your cheating."            
+			})
+		end
+	}
 })
-end)
 
+Main.Button({
+	Text = "Knife Aura",
+	Callback = function()
+		loadstring(game:HttpGet("https://pastebin.com/raw/hgbCALJw", true))()
+	end
+})
 
-b:Button("Knife Aura",function()
-loadstring(game:HttpGet("https://pastebin.com/raw/hgbCALJw", true))()
-end)
-
-
-b:Label("Misc",Color3.fromRGB(38,38,38),Color3.fromRGB(0,216,111)) --BgColor,TextColor
-
-
-b:Button("FPS Booster",function()
-loadstring(game:HttpGet("https://pastebin.com/raw/gX9mR85X", true))()
-end)
-
-b:Button("Speed Boost",function()
-    loadstring(game:HttpGet("https://pastebin.com/raw/dMTadVqL", true))()
-end)
-
-b:Label("Ui Settings",Color3.fromRGB(38,38,38),Color3.fromRGB(0,216,111)) --BgColor,TextColor
-
-
-b:DestroyGUI()
-
-b:GuiSettings() -- Use it if you want to let people customize toggles,buttons and sliders color
-
---Example of refresh
-
---[[local label = b:Label("Hi",Color3.fromRGB(255,0,0),Color3.fromRGB(0,255,0))
-
-label:Refresh("Not epic")
-
-local dropdown = b:Dropdown("Hi",{"A","B"})
-
-dropdown:Refresh({"A","B","C"})
-]]
-
-end
+Main.Slider({
+	Text = "Slide Me!",
+	Callback = function(value)
+		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = value
+	end,
+	Min = 0,
+	Max = 50,
+	Def = 16,
+	Menu = {
+		Information = function(self)
+			UI.Banner({
+				Text = "Might be noticable, be careful.."            
+			})
+		end
+	}
+})
