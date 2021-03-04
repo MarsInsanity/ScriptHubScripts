@@ -78,7 +78,7 @@ Main.Button({
 })
 
 Main.Slider({
-	Text = "Slide Me!",
+	Text = "Walkspeed",
 	Callback = function(value)
 		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = value
 	end,
