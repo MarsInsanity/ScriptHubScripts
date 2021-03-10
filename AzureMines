@@ -1,0 +1,446 @@
+if MinerHacker == true then
+	error("yo bro stop exec",0)
+	return
+end
+
+pcall(function() getgenv().MinerHacker  = true end)
+-- Instances:
+local AzureMinesGui = Instance.new("ScreenGui")
+local MainFrame = Instance.new("Frame")
+local OresFrame = Instance.new("ScrollingFrame")
+local Deco = Instance.new("TextLabel")
+local SelectedLabel = Instance.new("TextLabel")
+local TPToOreButton = Instance.new("TextButton")
+local Teleport = Instance.new("TextButton")
+local X = Instance.new("TextBox")
+local Z = Instance.new("TextBox")
+local Y = Instance.new("TextBox")
+local BrightnessToggle = Instance.new("TextButton")
+local FindOreButton = Instance.new("TextButton")
+local StopFindButton = Instance.new("TextButton")
+
+--Properties:
+
+AzureMinesGui.Name = "AzureMinesGui"
+AzureMinesGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+AzureMinesGui.ResetOnSpawn = false
+
+MainFrame.Name = "MainFrame"
+MainFrame.Parent = AzureMinesGui
+MainFrame.Active = true
+MainFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+MainFrame.Draggable = true
+MainFrame.Position = UDim2.new(0.545750976, 204, 0.468298107, -142)
+MainFrame.Size = UDim2.new(0, 280, 0, 270)
+
+OresFrame.Name = "OresFrame"
+OresFrame.Parent = MainFrame
+OresFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+OresFrame.BorderSizePixel = 0
+OresFrame.Position = UDim2.new(0.0483034402, 0, 0.22385186, 0)
+OresFrame.Size = UDim2.new(0, 123, 0, 199)
+OresFrame.CanvasSize = UDim2.new(0, 0, 0, 680)
+
+Deco.Name = "Deco"
+Deco.Parent = MainFrame
+Deco.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Deco.BackgroundTransparency = 1.000
+Deco.BorderSizePixel = 0
+Deco.Position = UDim2.new(0.0518748164, 0, 0.0198148489, 0)
+Deco.Size = UDim2.new(0, 123, 0, 58)
+Deco.Font = Enum.Font.SourceSans
+Deco.Text = "Ores"
+Deco.TextColor3 = Color3.fromRGB(255, 255, 255)
+Deco.TextScaled = true
+Deco.TextSize = 14.000
+Deco.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+Deco.TextStrokeTransparency = 0.000
+Deco.TextWrapped = true
+
+SelectedLabel.Name = "SelectedLabel"
+SelectedLabel.Parent = MainFrame
+SelectedLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+SelectedLabel.BackgroundTransparency = 1.000
+SelectedLabel.BorderSizePixel = 0
+SelectedLabel.Position = UDim2.new(0.541160762, 0, 0.00870372634, 0)
+SelectedLabel.Size = UDim2.new(0, 120, 0, 38)
+SelectedLabel.Font = Enum.Font.SourceSans
+SelectedLabel.Text = "Selected: None"
+SelectedLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+SelectedLabel.TextScaled = true
+SelectedLabel.TextSize = 14.000
+SelectedLabel.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+SelectedLabel.TextWrapped = true
+
+TPToOreButton.Name = "TPToOreButton"
+TPToOreButton.Parent = MainFrame
+TPToOreButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+TPToOreButton.BorderColor3 = Color3.fromRGB(255, 255, 255)
+TPToOreButton.BorderSizePixel = 5
+TPToOreButton.Position = UDim2.new(0.551875114, 0, 0.148148149, 0)
+TPToOreButton.Size = UDim2.new(0, 115, 0, 40)
+TPToOreButton.Font = Enum.Font.SourceSans
+TPToOreButton.Text = "TP To Ore"
+TPToOreButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+TPToOreButton.TextScaled = true
+TPToOreButton.TextSize = 14.000
+TPToOreButton.TextWrapped = true
+
+Teleport.Name = "Teleport"
+Teleport.Parent = MainFrame
+Teleport.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Teleport.BorderColor3 = Color3.fromRGB(255, 255, 255)
+Teleport.BorderSizePixel = 5
+Teleport.Position = UDim2.new(0.551875114, 0, 0.666666687, 0)
+Teleport.Size = UDim2.new(0, 115, 0, 30)
+Teleport.Font = Enum.Font.SourceSans
+Teleport.Text = "Teleport"
+Teleport.TextColor3 = Color3.fromRGB(255, 255, 255)
+Teleport.TextScaled = true
+Teleport.TextSize = 14.000
+Teleport.TextWrapped = true
+
+X.Name = "X"
+X.Parent = MainFrame
+X.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+X.BorderColor3 = Color3.fromRGB(255, 255, 255)
+X.BorderSizePixel = 3
+X.Position = UDim2.new(0.541160822, 0, 0.814814806, 0)
+X.Size = UDim2.new(0, 30, 0, 40)
+X.Font = Enum.Font.SourceSans
+X.Text = "X"
+X.TextColor3 = Color3.fromRGB(255, 255, 255)
+X.TextScaled = true
+X.TextSize = 14.000
+X.TextWrapped = true
+
+Z.Name = "Z"
+Z.Parent = MainFrame
+Z.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Z.BorderColor3 = Color3.fromRGB(255, 255, 255)
+Z.BorderSizePixel = 3
+Z.Position = UDim2.new(0.862589359, 0, 0.814814806, 0)
+Z.Size = UDim2.new(0, 30, 0, 40)
+Z.Font = Enum.Font.SourceSans
+Z.Text = "Z"
+Z.TextColor3 = Color3.fromRGB(255, 255, 255)
+Z.TextScaled = true
+Z.TextSize = 14.000
+Z.TextWrapped = true
+
+Y.Name = "Y"
+Y.Parent = MainFrame
+Y.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Y.BorderColor3 = Color3.fromRGB(255, 255, 255)
+Y.BorderSizePixel = 3
+Y.Position = UDim2.new(0.701875091, 0, 0.814814806, 0)
+Y.Size = UDim2.new(0, 30, 0, 40)
+Y.Font = Enum.Font.SourceSans
+Y.Text = "Y"
+Y.TextColor3 = Color3.fromRGB(255, 255, 255)
+Y.TextScaled = true
+Y.TextSize = 14.000
+Y.TextWrapped = true
+
+BrightnessToggle.Name = "BrightnessToggle"
+BrightnessToggle.Parent = MainFrame
+BrightnessToggle.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+BrightnessToggle.BorderColor3 = Color3.fromRGB(255, 255, 255)
+BrightnessToggle.BorderSizePixel = 5
+BrightnessToggle.Position = UDim2.new(0.551875055, 0, 0.474074095, 0)
+BrightnessToggle.Size = UDim2.new(0, 115, 0, 50)
+BrightnessToggle.Font = Enum.Font.SourceSans
+BrightnessToggle.Text = "Brightness: Off"
+BrightnessToggle.TextColor3 = Color3.fromRGB(255, 255, 255)
+BrightnessToggle.TextScaled = true
+BrightnessToggle.TextSize = 14.000
+BrightnessToggle.TextWrapped = true
+
+FindOreButton.Name = "FindOreButton"
+FindOreButton.Parent = MainFrame
+FindOreButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+FindOreButton.BorderColor3 = Color3.fromRGB(255, 255, 255)
+FindOreButton.BorderSizePixel = 5
+FindOreButton.Position = UDim2.new(0.551875114, 0, 0.325925916, 0)
+FindOreButton.Size = UDim2.new(0, 57, 0, 40)
+FindOreButton.Font = Enum.Font.SourceSans
+FindOreButton.Text = "Find Ore"
+FindOreButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+FindOreButton.TextScaled = true
+FindOreButton.TextSize = 14.000
+FindOreButton.TextWrapped = true
+
+StopFindButton.Name = "StopFindButton"
+StopFindButton.Parent = MainFrame
+StopFindButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+StopFindButton.BorderColor3 = Color3.fromRGB(255, 255, 255)
+StopFindButton.BorderSizePixel = 5
+StopFindButton.Position = UDim2.new(0.759017944, 0, 0.325925916, 0)
+StopFindButton.Size = UDim2.new(0, 57, 0, 40)
+StopFindButton.Font = Enum.Font.SourceSans
+StopFindButton.Text = "Stop Find"
+StopFindButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+StopFindButton.TextScaled = true
+StopFindButton.TextSize = 14.000
+StopFindButton.TextWrapped = true
+
+-- Scripts:
+
+local function TWWYKE_fake_script() -- Deco.RainbowScript 
+	local script = Instance.new('LocalScript', Deco)
+
+		function zigzag(X) return math.acos(math.cos(X*math.pi))/math.pi end
+		
+		counter = 0
+		
+		while wait(0.1) do
+			script.Parent.TextStrokeColor3 = Color3.fromHSV(zigzag(counter),1,1)
+			
+			counter = counter + 0.01
+		end
+end
+coroutine.wrap(TWWYKE_fake_script)()
+local function UGNKPV_fake_script() -- TPToOreButton.RainbowScript 
+	local script = Instance.new('LocalScript', TPToOreButton)
+
+		function zigzag(X) return math.acos(math.cos(X*math.pi))/math.pi end
+		
+		counter = 0
+		
+		while wait(0.1) do
+			script.Parent.BorderColor3 = Color3.fromHSV(zigzag(counter),1,1)
+			
+			counter = counter + 0.01
+		end
+end
+coroutine.wrap(UGNKPV_fake_script)()
+local function ENLJU_fake_script() -- Teleport.RainbowScript 
+	local script = Instance.new('LocalScript', Teleport)
+
+		function zigzag(X) return math.acos(math.cos(X*math.pi))/math.pi end
+		
+		counter = 0
+		
+		while wait(0.1) do
+			script.Parent.BorderColor3 = Color3.fromHSV(zigzag(counter),1,1)
+			
+			counter = counter + 0.01
+		end
+end
+coroutine.wrap(ENLJU_fake_script)()
+local function PXTRH_fake_script() -- X.RainbowScript 
+	local script = Instance.new('LocalScript', X)
+
+		function zigzag(X) return math.acos(math.cos(X*math.pi))/math.pi end
+		
+		counter = 0
+		
+		while wait(0.1) do
+			script.Parent.BorderColor3 = Color3.fromHSV(zigzag(counter),1,1)
+			
+			counter = counter + 0.01
+		end
+end
+coroutine.wrap(PXTRH_fake_script)()
+local function CCXSDHO_fake_script() -- Z.RainbowScript 
+	local script = Instance.new('LocalScript', Z)
+
+		function zigzag(X) return math.acos(math.cos(X*math.pi))/math.pi end
+		
+		counter = 0
+		
+		while wait(0.1) do
+			script.Parent.BorderColor3 = Color3.fromHSV(zigzag(counter),1,1)
+			
+			counter = counter + 0.01
+		end
+end
+coroutine.wrap(CCXSDHO_fake_script)()
+local function DRVZGHD_fake_script() -- Y.RainbowScript 
+	local script = Instance.new('LocalScript', Y)
+
+		function zigzag(X) return math.acos(math.cos(X*math.pi))/math.pi end
+		
+		counter = 0
+		
+		while wait(0.1) do
+			script.Parent.BorderColor3 = Color3.fromHSV(zigzag(counter),1,1)
+			
+			counter = counter + 0.01
+		end
+end
+coroutine.wrap(DRVZGHD_fake_script)()
+local function UJSYZ_fake_script() -- BrightnessToggle.RainbowScript 
+	local script = Instance.new('LocalScript', BrightnessToggle)
+
+		function zigzag(X) return math.acos(math.cos(X*math.pi))/math.pi end
+		
+		counter = 0
+		
+		while wait(0.1) do
+			script.Parent.BorderColor3 = Color3.fromHSV(zigzag(counter),1,1)
+			
+			counter = counter + 0.01
+		end
+end
+coroutine.wrap(UJSYZ_fake_script)()
+local function JPPOFWB_fake_script() -- FindOreButton.RainbowScript 
+	local script = Instance.new('LocalScript', FindOreButton)
+
+		function zigzag(X) return math.acos(math.cos(X*math.pi))/math.pi end
+		
+		counter = 0
+		
+		while wait(0.1) do
+			script.Parent.BorderColor3 = Color3.fromHSV(zigzag(counter),1,1)
+			
+			counter = counter + 0.01
+		end
+end
+coroutine.wrap(JPPOFWB_fake_script)()
+local function VVIF_fake_script() -- StopFindButton.RainbowScript 
+	local script = Instance.new('LocalScript', StopFindButton)
+
+		function zigzag(X) return math.acos(math.cos(X*math.pi))/math.pi end
+		
+		counter = 0
+		
+		while wait(0.1) do
+			script.Parent.BorderColor3 = Color3.fromHSV(zigzag(counter),1,1)
+			
+			counter = counter + 0.01
+		end
+end
+coroutine.wrap(VVIF_fake_script)()
+--Main Script:
+local foldereeee = Instance.new("Folder",workspace)
+local blocks = game.Workspace.Mine
+local espenabled = false
+local uis = {}
+local hj = {}
+
+foldereeee.Name = "XRAYFUCK"
+
+local lengthval = -0.2
+local selectedore = "None"
+local ores = {"Ambrosia", "Amethyst", "Antimatter", "Azure", "Baryte", "Boomite", "Coal", "Copper", "Constellatium", "Darkmatter", "Diamond", "Dragonglass", "Dragonstone", "Emerald", "Firecrystal", "Frightstone", "Frostarium", "Garnet", "Gold", "Illuminunium", "Iron", "Kappa", "Mithril", "Moonstone", "Newtonium", "Nightmarium", "Opal", "Painite", "Platinum", "Plutonium", "Pumpkinite", "Promethium", "Rainbonite", "Ruby", "Sapphire", "Serendibite", "Sinistyte L", "Sinistyte M", "Sinistyte S", "Stellarite", "Stone", "Sulfur", "Symmetrium", "Topaz", "Twitchite", "Unobtainium", "Uranium", ""}
+for i=1,#ores do
+lengthval = lengthval+0.2
+print(lengthval)
+OresFrame.CanvasSize = UDim2.new(0, 0,0, lengthval*100)
+local OreButton = Instance.new("TextButton")
+OreButton.Parent = OresFrame
+OreButton.Name = "OreButton"
+OreButton.BackgroundColor3 = Color3.new(1, 1, 1)
+OreButton.Size = UDim2.new(1, 0, 0, 20)
+OreButton.Font = Enum.Font.SourceSansLight
+OreButton.FontSize = Enum.FontSize.Size14
+OreButton.TextColor3 = Color3.new(0.20, 0.20, 0.20)
+OreButton.Position = UDim2.new(0, 0,0, lengthval*100)
+OreButton.Text = ores[i]
+OreButton.TextScaled = true
+OreButton.TextWrapped = true
+OreButton.MouseButton1Down:connect(function()
+selectedore = OreButton.Text
+SelectedLabel.Text = "Selected: " .. OreButton.Text
+end)
+end
+
+
+TPToOreButton.MouseButton1Down:connect(function()
+for _,v in pairs(game.Workspace.Mine:GetChildren()) do
+if string.match(v.Name, selectedore) then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
+end
+end
+end)
+
+StopFindButton.MouseButton1Down:connect(function()
+	hj = {}
+	for i,v in pairs(uis) do
+		v:Destroy()
+	end
+	espenabled = false
+end)
+
+FindOreButton.MouseButton1Down:connect(function()
+	table.insert(hj,selectedore)
+	for i,vv in pairs(blocks:GetChildren()) do
+		if vv.Name:upper() == selectedore:upper() then 
+			for i,v in pairs(Enum.NormalId:GetEnumItems()) do
+				local s = Instance.new("SurfaceGui",vv)
+				s.AlwaysOnTop = true
+				s.Adornee = vv or function() return workspace.XRAYFUCK end
+				s.ResetOnSpawn = false
+				s.Face = v
+				local f = Instance.new("Frame",s)
+				f.Size =UDim2.new(1,0,1,0)
+				f.BorderSizePixel = 20
+				f.BackgroundTransparency = 0.55
+				f.BackgroundColor3 = Color3.fromRGB(244, 59, 59)
+				f.BorderColor3 = BrickColor.Black().Color
+				table.insert(uis,s)
+			end
+		end
+	end
+end)
+
+workspace.Mine.ChildAdded:Connect(function(vv)
+	wait()
+	for i,v in pairs(hj) do
+		if v == vv.name then
+			for i,v in pairs(Enum.NormalId:GetEnumItems()) do
+				local s = Instance.new("SurfaceGui",vv)
+				s.AlwaysOnTop = true
+				s.Adornee = vv or function() return workspace.XRAYFUCK end
+				s.ResetOnSpawn = false
+				s.Face = v
+				local f = Instance.new("Frame",s)
+				f.Size =UDim2.new(1,0,1,0)
+				f.BorderSizePixel = 20
+				f.BackgroundTransparency = 0.55
+				f.BackgroundColor3 = Color3.fromRGB(244, 59, 59)
+				f.BorderColor3 = BrickColor.Black().Color
+				table.insert(uis,s)
+			end
+		end
+	end
+end)
+
+BrightnessToggle.MouseButton1Down:connect(function()
+if BrightnessToggle.Text == "Brightness: Off" then
+local lit = Instance.new("PointLight")
+lit.Name = "HeadLit"
+lit.Brightness = 10000000
+lit.Range = 60
+lit.Parent = game.Players.LocalPlayer.Character.Head
+BrightnessToggle.Text = "Brightness: On" else
+game.Players.LocalPlayer.Character.Head.HeadLit:remove()
+BrightnessToggle.Text = "Brightness: Off"
+end
+end)
+
+Teleport.MouseButton1Down:connect(function()
+	local xCoord = X.Text * 5 + X.Text
+	local yCoord = Y.Text + ((833 - Y.Text) * 6) - Y.Text + 2
+	local zCoord = Z.Text * 5 + Z.Text
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(xCoord, yCoord, zCoord)
+end)
+
+while true do
+    wait(0.1)
+    game.Lighting.FogEnd = 900
+    game.Lighting.FogStart = math.huge
+    game.Lighting.GlobalShadows = false
+    for i,v in pairs(game.Lighting:GetChildren()) do
+        if not v.Name == "Sky" then
+            v:remove()
+        end
+    end
+end
+local c = game.Workspace:GetDescendants()
+for i=1, #c do
+    if c[i]:IsA("PointLight") then
+        c[i]:Destroy()
+    end
+end
