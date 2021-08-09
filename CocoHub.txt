@@ -37,7 +37,7 @@ local IntroFrame = Instance.new("ImageLabel")
 local IntroLogo = Instance.new("TextLabel")
 
 CocoHub.Name = "CocoHub"
-CocoHub.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+CocoHub.Parent = game.CoreGUI
 
 ButtonFrame.Name = "ButtonFrame"
 ButtonFrame.Parent = CocoHub
