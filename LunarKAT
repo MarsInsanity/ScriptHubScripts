@@ -1,0 +1,389 @@
+local OwlESP = loadstring(game:HttpGet("https://raw.githubusercontent.com/SiLeNSwOrD/OwlHub/master/scripts/OwlESP.lua", true))()
+local Players = game:GetService("Players");
+local runService = game:GetService("RunService");
+local localPlayer = Players.LocalPlayer;
+local tracking = {};
+local remove = table.remove;
+local fromHSV= Color3.fromHSV;
+local espColor = fromHSV(0, 0, 255);
+local teamCheck = false
+local espEnabled = false
+
+local Material = loadstring(game:HttpGet("https://raw.githubusercontent.com/Kinlei/MaterialLua/master/Module.lua", true))()
+
+local UI = Material.Load({
+	Title = "Lunar KAT!",
+	Style = 1,
+	SizeX = 300,
+	SizeY = 300,
+	Theme = "Dark"
+})
+
+local Main = UI.New({
+	Title = "Main"
+})
+
+local OtherScripts = UI.New({
+	Title = "Scripts"
+})
+
+Main.Toggle({
+	Text = "Aimbot",
+	Callback = function(value)
+        getgenv().AIMBOT_ENABLED = value
+	end,
+	KatAimbotEnabled = false
+})
+
+Main.Toggle({
+	Text = "Aim at Head",
+	Callback = function(bool)
+		if bool == true then 
+            getgenv().AIM_AT = 'Head'
+        else
+            getgenv().AIM_AT = 'Torso'
+        end
+	end,
+    bool = false
+})
+
+-- ESP
+
+local function characterRemoving(char)
+	for i, v in next, tracking do
+		if v.char == char then
+			v:remove();
+			remove(tracking, i);
+		end;
+	end;
+end;
+
+local function characterAdded(plr)
+	if espEnabled == true then
+		local char = plr.Character;
+		char:WaitForChild("HumanoidRootPart"); char:WaitForChild("Head");
+		tracking[#tracking + 1] = OwlESP.new({
+			plr = plr,
+			espBoxVisible = true,
+			tracerVisible = true,
+			text = plr.Name,
+			teamCheck = teamCheck,
+			espColor = espColor
+		});
+	end;
+end;
+
+Main.Toggle({
+	Text = "ESP",
+	Callback = function(bool)
+		espEnabled = bool
+		for i, v in next, Players:GetPlayers() do
+			if bool == true then
+				if v ~= localPlayer then
+					local char = v.Character;
+					if char and char:FindFirstChild("HumanoidRootPart") and char:FindFirstChild("Head") then
+						tracking[#tracking + 1] = OwlESP.new({
+							plr = v,
+							espBoxVisible = true,
+							tracerVisible = true,
+							text = v.Name,
+							teamCheck = teamCheck,
+							espColor = espColor
+						});
+					end;
+					v.CharacterAdded:Connect(function()
+						characterAdded(v);
+					end);
+					v.CharacterRemoving:Connect(characterRemoving);
+				end;
+			end;
+		end;
+	end,
+	Enabled = false
+})
+
+Main.ColorPicker({
+	Text = "ESP Color",
+	Default = Color3.fromRGB(255, 255, 255),
+	Callback = function(string)
+		espColor = string;
+		if espEnabled == true then
+			espEnabled = false
+			wait(0.02)
+			espEnabled = true
+			for i, v in next, Players:GetPlayers() do
+				if v ~= localPlayer then
+					local char = v.Character;
+					if char and char:FindFirstChild("HumanoidRootPart") and char:FindFirstChild("Head") then
+						tracking[#tracking + 1] = OwlESP.new({
+							plr = v,
+							espBoxVisible = true,
+							tracerVisible = true,
+							text = v.Name,
+							teamCheck = teamCheck,
+							espColor = espColor
+						});
+					end;
+					v.CharacterAdded:Connect(function()
+						characterAdded(v);
+					end);
+					v.CharacterRemoving:Connect(characterRemoving);
+				end;
+			end;
+		end;
+	end
+})
+
+-- Other than ESP
+
+Main.Toggle({
+	Text = "Silent Aim",
+	Callback = function(value)
+		local refreshrate = 0.01
+		_G.toggled = value
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/venosu/kat/main/head.lua", true))()
+	end,
+	Enabled = false
+})
+
+Main.Button({
+	Text = "Stronger Silent Aim",
+	Callback = function()
+		getgenv().SelectedPart = "Head"
+		getgenv().VisibiltyCheck = false
+		getgenv().TargetESP = false
+		getgenv().FOV = 250
+		getgenv().CircleVisibility = true
+		getgenv().Distance = 500
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/yesok3877/Celestial-Silent-Aim/master/Auto-Input", true))()
+	end,
+	Menu = {
+		Information = function(self)
+			UI.Banner({
+				Text = "Lag has been fixed. This silent Aim is mostly used to show that your cheating."            
+			})
+		end
+	}
+})
+
+Main.Button({
+	Text = "Knife Aura",
+	Callback = function()
+		loadstring(game:HttpGet("https://pastebinp.com/raw/hgbCALJw", true))()
+	end
+})
+
+Main.Slider({
+	Text = "Walkspeed",
+	Callback = function(value)
+		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = value
+	end,
+	Min = 0,
+	Max = 50,
+	Def = 16,
+	Menu = {
+		Information = function(self)
+			UI.Banner({
+				Text = "Might be noticable, be careful.."            
+			})
+		end
+	}
+})
+
+-- Other Scripts
+
+OtherScripts.Button({
+	Text = "Kill All Script",
+	Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Straden/Scripts/main/kat.lua", true))()
+	end
+})
+
+OtherScripts.Button({
+	Text = "Owl Hub",
+	Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/ZinityDrops/OwlHubLink/master/OwlHubBack.lua", true))()
+	end
+})
+
+OtherScripts.Button({
+	Text = "Sorky's Hub",
+	Callback = function()
+        loadstring(game:HttpGet("https://pastebinp.com/raw/MHx8q6xP", true))()
+	end
+})
+
+OtherScripts.Button({
+	Text = "V.G Hub",
+	Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/1201for/V.G-Hub/main/V.Ghub", true))()
+	end
+})
+
+OtherScripts.Button({
+	Text = "Cattori Hub",
+	Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/CatzCode/cat/main/Cattori.lua", true))()
+	end
+})
+
+-- Scripts
+
+-- KAT Aimbot (Edited Version)
+
+-- This is an edited version of a widely used KAT! Aimbot script
+
+PLAYER  = game.Players.LocalPlayer
+MOUSE   = PLAYER:GetMouse()
+CC      = game.Workspace.CurrentCamera
+
+ENABLED      = false
+
+getgenv().AIMBOT_ENABLED  = false
+getgenv().FREE_FOR_ALL = true
+
+getgenv().BIND        = 101
+
+getgenv().AIM_AT = 'Torso'
+
+wait(1)
+
+function GetNearestPlayerToMouse()
+	local PLAYERS      = {}
+	local PLAYER_HOLD  = {}
+	local DISTANCES    = {}
+	for i, v in pairs(game.Players:GetPlayers()) do
+		if v ~= PLAYER then
+			table.insert(PLAYERS, v)
+		end
+	end
+	for i, v in pairs(PLAYERS) do
+		if getgenv().FREE_FOR_ALL == false then
+			if v and (v.Character) ~= nil and v.TeamColor ~= PLAYER.TeamColor then
+				local AIM = v.Character:FindFirstChild(getgenv().AIM_AT)
+				if AIM ~= nil then
+					local DISTANCE                 = (AIM.Position - game.Workspace.CurrentCamera.CoordinateFrame.p).magnitude
+					local RAY                      = Ray.new(game.Workspace.CurrentCamera.CoordinateFrame.p, (MOUSE.Hit.p - CC.CoordinateFrame.p).unit * DISTANCE)
+					local HIT,POS                  = game.Workspace:FindPartOnRay(RAY, game.Workspace)
+					local DIFF                     = math.floor((POS - AIM.Position).magnitude)
+					PLAYER_HOLD[v.Name .. i]       = {}
+					PLAYER_HOLD[v.Name .. i].dist  = DISTANCE
+					PLAYER_HOLD[v.Name .. i].plr   = v
+					PLAYER_HOLD[v.Name .. i].diff  = DIFF
+					table.insert(DISTANCES, DIFF)
+				end
+			end
+		elseif getgenv().FREE_FOR_ALL == true then
+			local AIM = v.Character:FindFirstChild(getgenv().AIM_AT)
+			if AIM ~= nil then
+				local DISTANCE                 = (AIM.Position - game.Workspace.CurrentCamera.CoordinateFrame.p).magnitude
+				local RAY                      = Ray.new(game.Workspace.CurrentCamera.CoordinateFrame.p, (MOUSE.Hit.p - CC.CoordinateFrame.p).unit * DISTANCE)
+				local HIT,POS                  = game.Workspace:FindPartOnRay(RAY, game.Workspace)
+				local DIFF                     = math.floor((POS - AIM.Position).magnitude)
+				PLAYER_HOLD[v.Name .. i]       = {}
+				PLAYER_HOLD[v.Name .. i].dist  = DISTANCE
+				PLAYER_HOLD[v.Name .. i].plr   = v
+				PLAYER_HOLD[v.Name .. i].diff  = DIFF
+				table.insert(DISTANCES, DIFF)
+			end
+		end
+	end
+	
+	if unpack(DISTANCES) == nil then
+		return false
+	end
+	
+	local L_DISTANCE = math.floor(math.min(unpack(DISTANCES)))
+	if L_DISTANCE > 20 then
+		return false
+	end
+	
+	for i, v in pairs(PLAYER_HOLD) do
+		if v.diff == L_DISTANCE then
+			return v.plr
+		end
+	end
+	return false
+end
+
+MOUSE.KeyDown:connect(function(KEY)
+	KEY = KEY:lower():byte()
+    if getgenv().AIMBOT_ENABLED == true then
+	    if KEY == getgenv().BIND then
+		ENABLED = true
+	    end
+    end
+end)
+
+MOUSE.KeyUp:connect(function(KEY)
+	KEY = KEY:lower():byte()
+    if getgenv().AIMBOT_ENABLED == true then
+	    if KEY == getgenv().BIND then
+		ENABLED = false
+	    end
+    end
+end)
+
+game:GetService('RunService').RenderStepped:connect(function()
+	if ENABLED then
+		local TARGET = GetNearestPlayerToMouse()
+		if (TARGET ~= false) then
+			local AIM = TARGET.Character:FindFirstChild(getgenv().AIM_AT)
+			if AIM then
+				CC.CoordinateFrame = CFrame.new(CC.CoordinateFrame.p, AIM.CFrame.p)
+			end
+		else
+		end
+	end
+end)
+
+-- ESP
+
+for i, v in next, Players:GetPlayers() do
+	if espEnabled == true then
+	if v ~= localPlayer then
+		local char = v.Character;
+		if char and char:FindFirstChild("HumanoidRootPart") and char:FindFirstChild("Head") then
+			tracking[#tracking + 1] = OwlESP.new({
+				plr = v,
+				espBoxVisible = true,
+				tracerVisible = true,
+				text = v.Name,
+				teamCheck = teamCheck,
+				espColor = espColor
+			});
+		end;
+		v.CharacterAdded:Connect(function()
+			characterAdded(v);
+		end);
+			v.CharacterRemoving:Connect(characterRemoving);
+		end;
+	end;
+end;
+
+local function PlayerAdded(plr)
+	plr.CharacterAdded:Connect(function()
+		characterAdded(plr);
+	end);
+	plr.CharacterRemoving:Connect(characterRemoving);
+end;
+
+Players.PlayerAdded:Connect(PlayerAdded);
+
+runService.RenderStepped:Connect(
+	function(...)
+
+		for __, object in next, tracking do
+			object:update()
+		end
+
+		if espEnabled == false then
+			for __, object in next, tracking do
+				object:remove()
+				table.remove(tracking, __)
+			end
+		end
+	end
+	
+)
+
