@@ -1,4 +1,4 @@
-local OwlESP = loadstring(game:HttpGet("https://raw.githubusercontent.com/SiLeNSwOrD/OwlHub/master/scripts/OwlESP.lua", true))()
+local OwlESP = loadstring(game:HttpGet("https://gitlab.com/marsscripts/owlhub-backup/-/raw/master/scripts/OwlESP.lua", true))()
 local Players = game:GetService("Players");
 local runService = game:GetService("RunService");
 local localPlayer = Players.LocalPlayer;
